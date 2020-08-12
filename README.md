@@ -1,7 +1,7 @@
 # DECO3801/7381
 We are team named 'We are AWESOME!!!'
 
-Team members: Thomas Chen, Bosheng Zhang, Jacky Xie, Eden , Jonathan Lau, Lester
+Team members: Thomas Chen, Bosheng Zhang, Junyi Xie, Eden Ke, Jonathan Lau, Lester Phua
 
 Problem Statement: 
 Inner-city congestion remains a growing problem in today’s technological society and we need a cost-effective, ethical, and social solution.
