@@ -6,15 +6,27 @@ import androidx.annotation.RequiresApi;
 
 import java.util.Objects;
 
+/**
+ * This is the user entity, including userName, userId, email, goCardNo, licenseNo, vrNo
+ */
 public class UserBean {
     private String userName;
-    private String userId;
+    private int userId;
     private String email;
     private String goCardNo;
     private String licenseNo;
     private String vrNo;
 
-    public UserBean(String userName, String userId, String email, String goCardNo, String licenseNo, String vrNo) {
+    /**
+     * user entity
+     * @param userName - name for user
+     * @param userId - id for user，primary key for database
+     * @param email - email for user
+     * @param goCardNo - goCardNo for user
+     * @param licenseNo - Driver license No for user
+     * @param vrNo - Vihicle Registration No for user
+     */
+    public UserBean(String userName, int userId, String email, String goCardNo, String licenseNo, String vrNo) {
         this.userName = userName;
         this.userId = userId;
         this.email = email;
@@ -31,11 +43,11 @@ public class UserBean {
         this.userName = userName;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
