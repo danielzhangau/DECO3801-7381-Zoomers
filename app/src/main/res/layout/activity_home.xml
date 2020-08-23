@@ -83,7 +83,6 @@
         android:id="@+id/div_tab_bar"
         android:layout_width="match_parent"
         android:layout_height="2px"
-        android:background="@color/div_white"
         android:layout_above="@id/ly_tab_bar"/>
 
     <FrameLayout
