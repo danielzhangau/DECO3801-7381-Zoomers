@@ -26,4 +26,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+<!--    bottom nav bar-->
+    <string name="home_btn">Home</string>
+    <string name="stats_btn">Stats</string>
+    <string name="reward_btn">Reword</string>
+    <string name="account_btn">Account</string>
 </resources>
