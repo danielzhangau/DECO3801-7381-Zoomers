@@ -7,8 +7,7 @@
     <RelativeLayout
         android:id="@+id/ly_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/bg_topbar">
+        android:layout_height="48dp">
 
         <TextView
             android:id="@+id/txt_topbar"
@@ -17,13 +16,11 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:textSize="18sp"
-            android:textColor="@color/text_topbar"
             android:text="信息"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2px"
-            android:background="@color/div_white"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
@@ -33,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/bg_white"
         android:orientation="horizontal">
 
         <TextView
@@ -43,7 +39,6 @@
             android:layout_weight="1"
             android:background="#FFFFFF"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_channel"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/home_btn"
@@ -54,9 +49,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_message"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/stats_btn"
@@ -67,9 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_better"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/reward_btn"
@@ -80,9 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_setting"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/account_btn"
