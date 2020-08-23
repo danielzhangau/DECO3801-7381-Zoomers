@@ -80,7 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="70dp"
             android:textStyle="bold"
-            android:text="@string/next"/>
+            android:text="@string/next"
+            android:onClick="beginLogin"/>
 
     </LinearLayout>
 
