@@ -5,10 +5,36 @@
     android:layout_height="match_parent"
     tools:context=".pagefragment.statisticspage.StatisticsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:text="Statistics Page" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:background="@drawable/ed_border"
+            android:text="@string/economic"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ed_border"
+            android:textSize="30sp"
+            android:text="@string/environmental"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ed_border"
+            android:textSize="30sp"
+            android:text="@string/national"/>
+    </LinearLayout>
+
 
 </FrameLayout>
