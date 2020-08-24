@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DECO3801-7381-Zoomers.iml" filepath="$PROJECT_DIR$/.idea/modules/DECO3801-7381-Zoomers.iml" group="DECO3801-7381-Zoomers" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_app_zoomer.iml" filepath="$PROJECT_DIR$/flutter_app_zoomer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/flutter_app_zoomer_android.iml" filepath="$PROJECT_DIR$/android/flutter_app_zoomer_android.iml" />
     </modules>
   </component>
 </project>
