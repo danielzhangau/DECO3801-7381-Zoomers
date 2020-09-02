@@ -7,7 +7,10 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import Loading from '../screens/LoadingPage';
+import Login from '../screens/LoginPage';
+import { BottomTabParamList, LoadingParamList, LoginParamList, TabOneParamList, TabTwoParamList } from '../types';
+
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,8 +19,22 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Loading"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      <BottomTab.Screen
+        name="Loading"
+        component={LoadingNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Login"
+        component={LoginNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
       <BottomTab.Screen
         name="TabOne"
         component={TabOneNavigator}
@@ -45,6 +62,34 @@ function TabBarIcon(props: { name: string; color: string }) {
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator<TabOneParamList>();
+
+const LoadingStack = createStackNavigator<LoadingParamList>();
+
+function LoadingNavigator() {
+  return (
+    <LoadingStack.Navigator>
+      <LoadingStack.Screen
+        name="LoadingScreen"
+        component={Loading}
+        options={{ headerTitle: 'Loading Page' }}
+      />
+    </LoadingStack.Navigator>
+  );
+}
+
+const LoginStack = createStackNavigator<LoginParamList>();
+
+function LoginNavigator() {
+  return (
+    <LoginStack.Navigator>
+      <LoginStack.Screen
+        name="LoginScreen"
+        component={Login}
+        options={{ headerTitle: 'Login Page' }}
+      />
+    </LoginStack.Navigator>
+  );
+}
 
 function TabOneNavigator() {
   return (

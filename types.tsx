@@ -4,8 +4,18 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
+  Loading: undefined;
+  Login: undefined;
   TabOne: undefined;
   TabTwo: undefined;
+};
+
+export type LoadingParamList = {
+  LoadingScreen: undefined;
+};
+
+export type LoginParamList = {
+  LoginScreen: undefined;
 };
 
 export type TabOneParamList = {
