@@ -7,9 +7,10 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import Loading from '../screens/LoadingPage';
-import Login from '../screens/LoginPage';
-import { BottomTabParamList, LoadingParamList, LoginParamList, TabOneParamList, TabTwoParamList } from '../types';
+import LoadingScreen from '../screens/LoadingPageScreen';
+import LoginScreen from '../screens/LoginPageScreen';
+import SignupScreen from '../screens/SignupPageScreen';
+import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -31,6 +32,13 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Login"
         component={LoginNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Signup"
+        component={SignupNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -61,7 +69,6 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
 
 const LoadingStack = createStackNavigator<LoadingParamList>();
 
@@ -70,7 +77,7 @@ function LoadingNavigator() {
     <LoadingStack.Navigator>
       <LoadingStack.Screen
         name="LoadingScreen"
-        component={Loading}
+        component={LoadingScreen}
         options={{ headerTitle: 'Loading Page' }}
       />
     </LoadingStack.Navigator>
@@ -84,12 +91,28 @@ function LoginNavigator() {
     <LoginStack.Navigator>
       <LoginStack.Screen
         name="LoginScreen"
-        component={Login}
+        component={LoginScreen}
         options={{ headerTitle: 'Login Page' }}
       />
     </LoginStack.Navigator>
   );
 }
+
+const SignupStack = createStackNavigator<SignupParamList>();
+
+function SignupNavigator() {
+  return (
+    <SignupStack.Navigator>
+      <SignupStack.Screen
+        name="SignupScreen"
+        component={SignupScreen}
+        options={{ headerTitle: 'Signup Page' }}
+      />
+    </SignupStack.Navigator>
+  );
+}
+
+const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
   return (
