@@ -1,34 +1,26 @@
 import React, { useState } from 'react';
-import { Button, Text, Image, TextInput, View } from 'react-native';
+import { StyleSheet, Button, Text, Image, TextInput, View } from 'react-native';
 
 const LoginScreen = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isSignup, setIsSignup] = useState(true);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Image
           source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green%20miles.png"}}
           style={{width: 200, height: 200}}
       />
 
-      <Text>Your name</Text>
+      <Text style={styles.text}>Your name</Text>
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
+        style={styles.textInput}
         defaultValue="Your username"
       />
 
-      <Text>Your password</Text>
+      <Text style={styles.text}>Your password</Text>
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
+        style={styles.textInput}
         defaultValue="Your password"
       />
 
@@ -50,5 +42,27 @@ const LoginScreen = () => {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      backgroundColor: '#068D3C',
+      justifyContent: 'center',
+      alignItems: 'center',
+  },
+  text: {
+      // fontFamily: Roboto,
+      fontSize: 25,
+      // fontStyle: medium,
+      color: 'white',
+  },
+  textInput: {
+      height: 40,
+      width: 300,
+      fontSize: 25,
+      borderColor: 'white',
+      borderWidth: 1
+  }
+})
 
 export default LoginScreen;
