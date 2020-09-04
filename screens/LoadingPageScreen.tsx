@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#DFECDC',
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Roboto',
     },
     text: {
         width: 282, 
         height: 64,
-        // fontFamily: Roboto,
         fontSize: 25,
         // fontStyle: medium,
         color: '#309200',

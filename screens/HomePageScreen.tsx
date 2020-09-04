@@ -23,21 +23,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#DFECDC',
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Roboto',
     },
     textBig: {
-        // fontFamily: Roboto,
+        fontFamily: 'Roboto-Bold',
         fontSize: 40,
-        // fontStyle: medium,
+        fontStyle: 'normal',
     },
     text: {
-        // fontFamily: Roboto,
         fontSize: 20,
-        // fontStyle: medium,
     },
     number: {
-        // fontFamily: Roboto,
+        fontFamily: 'Roboto-Bold',
         fontSize: 25,
-        // fontStyle: medium,
     }
 })
 export default HomeScreen;

@@ -53,11 +53,10 @@ const styles = StyleSheet.create({
       backgroundColor: '#068D3C',
       justifyContent: 'center',
       alignItems: 'center',
+      fontFamily: 'Roboto',
   },
   text: {
-      // fontFamily: Roboto,
       fontSize: 25,
-      // fontStyle: medium,
       color: 'white',
   },
   textInput: {
