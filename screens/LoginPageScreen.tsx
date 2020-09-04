@@ -14,11 +14,14 @@ const LoginScreen = ({navigation}) => {
 
       <TextInput
         style={styles.textInput}
-        defaultValue="Your username"
+        placeholder="Your username"
+        placeholderTextColor='#787878'
       />
       <TextInput
         style={styles.textInput}
-        defaultValue="Your password"
+        placeholder="Your password"
+        placeholderTextColor='#787878'
+        secureTextEntry={true}
       />
       <TouchableOpacity onPress = {() => {navigation.navigate('Home')}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
@@ -64,8 +67,9 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       backgroundColor: '#FFFFFF',
       opacity: 0.43,
-      color: '#787878',
-      marginBottom: 35
+      color: '#000000',
+      marginBottom: 35,
+      paddingLeft: 10,
   }, 
   textForget: {
       fontSize: 15,

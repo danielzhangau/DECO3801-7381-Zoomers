@@ -16,15 +16,18 @@ const SignupScreen = ({navigation}) => {
       <Text style={styles.text}>Your name</Text>
       <TextInput
         style={styles.textInput}
-        defaultValue="Title"
+        placeholder="Title"
+        placeholderTextColor='#787878'
       />
       <TextInput
         style={styles.textInput}
-        defaultValue="Family name"
+        placeholder="Family name"
+        placeholderTextColor='#787878'
       />
       <TextInput
         style={styles.textInput}
-        defaultValue="Given name"
+        placeholder="Given name"
+        placeholderTextColor='#787878'
       />
 
       <View style={styles.separator} lightColor="#707070" darkColor="#515151" />
@@ -32,12 +35,16 @@ const SignupScreen = ({navigation}) => {
       <Text style={styles.text}>Your password</Text>
       <TextInput
         style={styles.textInput}
-        defaultValue="Enter your password"
+        placeholder="Enter your password"
+        secureTextEntry={true}
+        placeholderTextColor='#787878'
       />
       
       <TextInput
         style={styles.textInput}
-        defaultValue="Confirm your password"
+        placeholder="Confirm your password"
+        secureTextEntry={true}
+        placeholderTextColor='#787878'
       />
 
       <TouchableOpacity onPress = {() => {navigation.navigate('Login')}}>
@@ -84,7 +91,9 @@ const styles = StyleSheet.create({
       marginTop: 10,
       backgroundColor: '#FFFFFF',
       opacity: 0.43,
-      color: '#787878',
+      color: '#000000',
+      paddingLeft: 10,
+      
   }
 })
 
