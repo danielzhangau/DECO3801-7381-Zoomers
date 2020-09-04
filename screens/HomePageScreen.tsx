@@ -20,7 +20,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#DFECDC',
+        backgroundColor: '#068D3C',
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily: 'Roboto',
@@ -29,13 +29,20 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto-Bold',
         fontSize: 40,
         fontStyle: 'normal',
+        textShadowColor: '#3B3A3A',
+        textShadowOffset: {width: 0, height: 3},
+        textShadowRadius: 4,
+        color: 'white',
+        marginBottom: 20
     },
     text: {
         fontSize: 20,
+        color: 'white'
     },
     number: {
         fontFamily: 'Roboto-Bold',
         fontSize: 25,
+        color: 'white'
     }
 })
 export default HomeScreen;

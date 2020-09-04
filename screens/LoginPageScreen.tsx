@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Button, Text, Image, TextInput, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Button, Text, Image, TextInput, View } from 'react-native';
 
 const LoginScreen = ({navigation}) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,37 +12,34 @@ const LoginScreen = ({navigation}) => {
           style={{width: 200, height: 200}}
       />
 
-      <Text style={styles.text}>Your name</Text>
       <TextInput
         style={styles.textInput}
         defaultValue="Your username"
       />
-
-      <Text style={styles.text}>Your password</Text>
       <TextInput
         style={styles.textInput}
         defaultValue="Your password"
       />
-
-      <Button
-        onPress={() => {
-          // setIsLogin(false);
-          navigation.navigate('Home')
-        }}
-        // disabled={!isLogin}
-        // title={isLogin ? "Login" : "Login Successful"}
-        title="Sign in"
-      />
-
-      <Button
-        onPress={() => {
-          // setIsSignup(false);
-          navigation.navigate('Signup')
-        }}
-        // disabled={!isSignup}
-        // title={isSignup ? "Signup" : "Signup Successful"}
-        title="Sign up"
-      />
+      <TouchableOpacity onPress = {() => {navigation.navigate('Home')}}>
+          <View style = {{height: 50, width: 200, backgroundColor: 'white', 
+                          alignItems: 'center', justifyContent: 'center', 
+                          borderRadius: 40, marginVertical: 10}}>
+              <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
+                          fontSize: 22}}>LOG IN</Text>
+          </View>
+      </TouchableOpacity>
+      <Text style={styles.text}>New to here?</Text>
+      <TouchableOpacity onPress = {() => {navigation.navigate('Signup')}}>
+          <View style = {{height: 50, width: 200, backgroundColor: 'white', 
+                          alignItems: 'center', justifyContent: 'center', 
+                          borderRadius: 40, marginVertical: 10}}>
+              <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
+                          fontSize: 22}}>SIGN UP</Text>
+          </View>
+      </TouchableOpacity>
+      <Text >{"\n"}{"\n"}{"\n"}</Text>
+      <Text style={styles.textForget}>Forget your username?</Text>
+      <Text style={styles.textForget}>Forget your password?</Text>
     </View>
   );
 }
@@ -56,15 +53,25 @@ const styles = StyleSheet.create({
       fontFamily: 'Roboto',
   },
   text: {
-      fontSize: 25,
+      fontSize: 15,
       color: 'white',
   },
   textInput: {
-      height: 40,
+      height: 50,
       width: 300,
-      fontSize: 25,
-      borderColor: 'white',
-      borderWidth: 1
+      fontSize: 20,
+      borderColor: '#707070',
+      borderWidth: 1,
+      backgroundColor: '#FFFFFF',
+      opacity: 0.43,
+      color: '#787878',
+      marginBottom: 35
+  }, 
+  textForget: {
+      fontSize: 15,
+      color: 'white',
+      alignSelf: 'flex-start',
+      marginLeft: 40
   }
 })
 

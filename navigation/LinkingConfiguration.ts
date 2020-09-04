@@ -26,14 +26,9 @@ export default {
               HomeScreen: 'home',
             },
           },
-          TabOne: {
+          Profile: {
             screens: {
-              TabOneScreen: 'one',
-            },
-          },
-          TabTwo: {
-            screens: {
-              TabTwoScreen: 'two',
+              ProfileScreen: 'profile',
             },
           },
         },
