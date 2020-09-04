@@ -21,6 +21,11 @@ export default {
               SignupScreen: 'signup',
             },
           },
+          Home: {
+            screens: {
+              HomeScreen: 'home',
+            },
+          },
           TabOne: {
             screens: {
               TabOneScreen: 'one',

@@ -26,10 +26,12 @@ const LoginScreen = ({navigation}) => {
 
       <Button
         onPress={() => {
-          setIsLogin(false);
+          // setIsLogin(false);
+          navigation.navigate('Home')
         }}
-        disabled={!isLogin}
-        title={isLogin ? "Login" : "Login Successful"}
+        // disabled={!isLogin}
+        // title={isLogin ? "Login" : "Login Successful"}
+        title="Sign in"
       />
 
       <Button
@@ -39,7 +41,7 @@ const LoginScreen = ({navigation}) => {
         }}
         // disabled={!isSignup}
         // title={isSignup ? "Signup" : "Signup Successful"}
-        title="Signup"
+        title="Sign up"
       />
     </View>
   );
