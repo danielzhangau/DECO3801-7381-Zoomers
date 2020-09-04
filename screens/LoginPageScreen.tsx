@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Button, Text, Image, TextInput, View } from 'react-native';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [isLogin, setIsLogin] = useState(true);
-  const [isSignup, setIsSignup] = useState(true);
+  // const [isSignup, setIsSignup] = useState(true);
 
   return (
     <View style={styles.container}>
@@ -34,10 +34,12 @@ const LoginScreen = () => {
 
       <Button
         onPress={() => {
-          setIsSignup(false);
+          // setIsSignup(false);
+          navigation.navigate('Signup')
         }}
-        disabled={!isSignup}
-        title={isSignup ? "Signup" : "Signup Successful"}
+        // disabled={!isSignup}
+        // title={isSignup ? "Signup" : "Signup Successful"}
+        title="Signup"
       />
     </View>
   );

@@ -5,11 +5,11 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
 import LoadingScreen from '../screens/LoadingPageScreen';
 import LoginScreen from '../screens/LoginPageScreen';
 import SignupScreen from '../screens/SignupPageScreen';
+import TabOneScreen from '../screens/TabOneScreen';
+import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 
