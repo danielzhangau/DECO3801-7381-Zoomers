@@ -6,6 +6,26 @@ export default {
     screens: {
       Root: {
         screens: {
+          Loading: {
+            screens: {
+              LoadingScreen: 'loading',
+            },
+          },
+          Login: {
+            screens: {
+              LoginScreen: 'login',
+            },
+          },
+          Signup: {
+            screens: {
+              SignupScreen: 'signup',
+            },
+          },
+          Home: {
+            screens: {
+              HomeScreen: 'home',
+            },
+          },
           TabOne: {
             screens: {
               TabOneScreen: 'one',

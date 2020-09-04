@@ -5,12 +5,13 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
 import LoadingScreen from '../screens/LoadingPageScreen';
 import LoginScreen from '../screens/LoginPageScreen';
 import SignupScreen from '../screens/SignupPageScreen';
-import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, TabOneParamList, TabTwoParamList } from '../types';
+import HomeScreen from '../screens/HomePageScreen';
+import TabOneScreen from '../screens/TabOneScreen';
+import TabTwoScreen from '../screens/TabTwoScreen';
+import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -39,6 +40,13 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Signup"
         component={SignupNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Home"
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -109,6 +117,20 @@ function SignupNavigator() {
         options={{ headerTitle: 'Signup Page' }}
       />
     </SignupStack.Navigator>
+  );
+}
+
+const HomeStack = createStackNavigator<HomeParamList>();
+
+function HomeNavigator() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerTitle: 'Home Page' }}
+      />
+    </HomeStack.Navigator>
   );
 }
 
