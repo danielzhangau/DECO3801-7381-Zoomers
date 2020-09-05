@@ -10,9 +10,9 @@ import LoginScreen from '../screens/LoginPageScreen';
 import ProfileScreen from '../screens/ProfilePageScreen';
 import SignupScreen from '../screens/SignupPageScreen';
 import HomeScreen from '../screens/HomePageScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, TabOneParamList, TabTwoParamList } from '../types';
+import RewardScreen from '../screens/RewardPageScreen';
+import StatisticScreen from '../screens/StatisticPageScreen';
+import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList } from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -55,6 +55,20 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Profile"
         component={ProfileNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Reward"
+        component={RewardNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Statistic"
+        component={StatisticNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -139,5 +153,33 @@ function ProfileNavigator() {
         options={{ headerTitle: 'Profile' }}
       />
     </ProfileStack.Navigator>
+  );
+}
+
+const RewardStack = createStackNavigator<RewardParamList>();
+
+function RewardNavigator() {
+  return (
+    <RewardStack.Navigator>
+      <RewardStack.Screen
+        name="RewardScreen"
+        component={RewardScreen}
+        options={{ headerTitle: 'Reward' }}
+      />
+    </RewardStack.Navigator>
+  );
+}
+
+const StatisticStack = createStackNavigator<StatisticParamList>();
+
+function StatisticNavigator() {
+  return (
+    <StatisticStack.Navigator>
+      <StatisticStack.Screen
+        name="StatisticScreen"
+        component={StatisticScreen}
+        options={{ headerTitle: 'Statistic' }}
+      />
+    </StatisticStack.Navigator>
   );
 }

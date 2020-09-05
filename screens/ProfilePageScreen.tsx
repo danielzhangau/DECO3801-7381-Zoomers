@@ -15,7 +15,7 @@ const ProfileScreen = ({navigation}) => {
             <Text style={styles.text}>Your available travel money</Text>
             <Text style={styles.number}>92km</Text>
 
-            <TouchableOpacity onPress = {() => {navigation.navigate('Profile')}}>
+            <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                                 alignItems: 'center', justifyContent: 'center', 
                                 borderRadius: 40, marginVertical: 30}}>

@@ -13,6 +13,8 @@ const HomeScreen = () => {
             <Text style={styles.number}>3</Text>
             <Text style={styles.text}>days left</Text>
             <Text style={styles.text}>to beat Dave</Text>
+
+            <Text style={styles.textBig}>Leaderboard here</Text>
         </View>
     )
 }

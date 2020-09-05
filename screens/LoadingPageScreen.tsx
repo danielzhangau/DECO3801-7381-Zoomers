@@ -1,16 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-const LoadingScreen = () => {
+const LoadingScreen = ({navigation}) => {
     const loading_text = "Get Rewarded for All Your Public Transport Travel"
     return (
-        <View style={styles.container}>
+        <TouchableOpacity onPress = {() => {navigation.navigate('Login')}} style={styles.container}>
             <Image
                 source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green%20miles.png"}}
-                style={{width: 290, height: 290}}
+                style={{width: 290, height: 290, marginTop: 80}}
             />
             <Text style={styles.text}>{loading_text}</Text>
-        </View>
+        </TouchableOpacity>
+
+        // <View style={styles.container}>
+            // <Image
+            //     source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green%20miles.png"}}
+            //     style={{width: 290, height: 290}}
+            // />
+            // <Text style={styles.text}>{loading_text}</Text>
+        // </View>
     )
 }
 
@@ -18,7 +26,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#D0ECC9',
-        justifyContent: 'center',
         alignItems: 'center',
         
     },

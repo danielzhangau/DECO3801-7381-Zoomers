@@ -31,6 +31,16 @@ export default {
               ProfileScreen: 'profile',
             },
           },
+          Reward: {
+            screens: {
+              RewardScreen: 'reward',
+            },
+          },
+          Statistic: {
+            screens: {
+              StatisticScreen: 'statistic',
+            },
+          },
         },
       },
       NotFound: '*',

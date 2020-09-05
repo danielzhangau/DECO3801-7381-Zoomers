@@ -9,8 +9,8 @@ export type BottomTabParamList = {
   Signup: undefined;
   Home: undefined;
   Profile: undefined;
-  TabOne: undefined;
-  TabTwo: undefined;
+  Reward: undefined;
+  Statistic: undefined;
 };
 
 export type LoadingParamList = {
@@ -31,4 +31,12 @@ export type HomeParamList = {
 
 export type ProfileParamList = {
   ProfileScreen: undefined;
+};
+
+export type RewardParamList = {
+  RewardScreen: undefined;
+};
+
+export type StatisticParamList = {
+  StatisticScreen: undefined;
 };
