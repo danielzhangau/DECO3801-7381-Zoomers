@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text, TouchableHighlight } from 'react-native';
 
 const RewardScreen = ({navigation}) => {
     return (
@@ -86,9 +86,9 @@ const RewardScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
-                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/HOYTS-Frankston-Recliner.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={require("../img/HOYTS-Frankston-Recliner.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/hotys.png"}}
+                        source={require("../img/hotys.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
@@ -126,7 +126,7 @@ const RewardScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
-                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/Coles-supermarket.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
                         source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/coles%20gift%20card.png"}}
                         style={{width: '60%', height: 130, borderRadius: 20, 
