@@ -6,7 +6,8 @@ const LoadingScreen = ({navigation}) => {
     return (
         <TouchableOpacity onPress = {() => {navigation.navigate('Login')}} style={styles.container}>
             <Image
-                source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green%20miles.png"}}
+                source={require('./../img/green_miles.png')}
+                // source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green_miles.png"}}
                 style={{width: 290, height: 290, marginTop: 80}}
             />
             <Text style={styles.text}>{loading_text}</Text>
@@ -14,7 +15,7 @@ const LoadingScreen = ({navigation}) => {
 
         // <View style={styles.container}>
             // <Image
-            //     source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green%20miles.png"}}
+            //     source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green_miles.png"}}
             //     style={{width: 290, height: 290}}
             // />
             // <Text style={styles.text}>{loading_text}</Text>

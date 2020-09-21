@@ -8,7 +8,7 @@ const SignupScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
-          source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green%20miles.png"}}
+          source={require('./../img/green_miles.png')}
           style={{width: 200, height: 100, backgroundColor: 'white', borderRadius: 40, 
                   alignItems: 'center', justifyContent: 'center', marginBottom: 20}}
       />
