@@ -7,7 +7,7 @@ const ProfileScreen = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.text}>Good day! HelloWorld</Text>
             <Image
-                source={require('./../img/绿谷.jpg')}
+                source={require('./../img/lvgu.jpg')}
                 style={{width: 190, height: 190, marginVertical: 20, borderRadius: 400/ 2}}
             />
             <Text style={styles.text}>You have travelled by using public transport </Text>
