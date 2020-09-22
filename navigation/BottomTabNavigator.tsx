@@ -7,12 +7,14 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import LoadingScreen from '../screens/LoadingPageScreen';
 import LoginScreen from '../screens/LoginPageScreen';
-import ProfileScreen from '../screens/ProfilePageScreen';
 import SignupScreen from '../screens/SignupPageScreen';
+import ProfileScreen from '../screens/ProfilePageScreen';
 import HomeScreen from '../screens/HomePageScreen';
 import RewardScreen from '../screens/RewardPageScreen';
 import StatisticScreen from '../screens/StatisticPageScreen';
-import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList } from '../types';
+import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
+import StatisticMapScreen from '../screens/StatisticMapPageScreen';
+import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList, StatisticTreeParamList, StatisticMapParamList } from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -69,6 +71,20 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Statistic"
         component={StatisticNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="StatisticTree"
+        component={StatisticTreeNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="StatisticMap"
+        component={StatisticMapNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -181,5 +197,33 @@ function StatisticNavigator() {
         options={{ headerTitle: 'Statistic' }}
       />
     </StatisticStack.Navigator>
+  );
+}
+
+const StatisticTreeStack = createStackNavigator<StatisticTreeParamList>();
+
+function StatisticTreeNavigator() {
+  return (
+    <StatisticTreeStack.Navigator>
+      <StatisticTreeStack.Screen
+        name="StatisticTreeScreen"
+        component={StatisticTreeScreen}
+        options={{ headerTitle: 'StatisticTree' }}
+      />
+    </StatisticTreeStack.Navigator>
+  );
+}
+
+const StatisticMapStack = createStackNavigator<StatisticMapParamList>();
+
+function StatisticMapNavigator() {
+  return (
+    <StatisticMapStack.Navigator>
+      <StatisticMapStack.Screen
+        name="StatisticMapScreen"
+        component={StatisticMapScreen}
+        options={{ headerTitle: 'StatisticMap' }}
+      />
+    </StatisticMapStack.Navigator>
   );
 }

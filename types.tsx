@@ -11,6 +11,8 @@ export type BottomTabParamList = {
   Profile: undefined;
   Reward: undefined;
   Statistic: undefined;
+  StatisticTree: undefined;
+  StatisticMap: undefined;
 };
 
 export type LoadingParamList = {
@@ -39,4 +41,12 @@ export type RewardParamList = {
 
 export type StatisticParamList = {
   StatisticScreen: undefined;
+};
+
+export type StatisticTreeParamList = {
+  StatisticTreeScreen: undefined;
+};
+
+export type StatisticMapParamList = {
+  StatisticMapScreen: undefined;
 };
