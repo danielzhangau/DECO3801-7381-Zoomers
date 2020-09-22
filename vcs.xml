@@ -6,7 +6,12 @@
           <option name="url" value="http://git-ext.chumanapp.com" />
           <option name="userName" value="yiyu.ke@dreampix.cn" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/liuwan1992/CustomDatePicker.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
+    <option name="cloneParentDir" value="$USER_HOME$/Desktop/DreamPix" />
   </component>
 </application>
