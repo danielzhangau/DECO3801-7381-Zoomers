@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class Inputs extends Component {
     state = {
@@ -14,7 +15,7 @@ class Inputs extends Component {
     }
     login = (user, pass) => {
         alert('username: ' + user + ' password: ' + pass)
-        this.props.navigation.navigate('Home', { screen: 'HomeScreen' })
+        // this.props.navigation.navigate('Home', { screen: 'HomeScreen' })
     }
     render() {
         return (
