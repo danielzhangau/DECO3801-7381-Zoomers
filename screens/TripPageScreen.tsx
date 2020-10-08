@@ -10,79 +10,42 @@ const TripScreen = ({navigation}) => {
                 justifyContent: 'center',
                 alignItems: 'stretch',
             }}>
-            {/* the top km number button */}
-            <View style={{height: 100, backgroundColor: '#068D3C', alignItems: 'center', justifyContent: 'center' }} >
-                <TouchableOpacity onPress = {() => {navigation.navigate('Home')}}>
-                    <View style = {{height: 70, width: 250, backgroundColor: 'white', 
-                                    alignItems: 'center', justifyContent: 'center', 
+            {/* month and km number */}
+            <View style={{height: 100, backgroundColor: '#068D3C', flexDirection: 'row', justifyContent: 'space-between'}} >
+                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                    <View style = {{height: 50, width: 170, alignItems: 'center', 
+                                    backgroundColor: 'white', justifyContent: 'center',
                                     borderRadius: 40, marginVertical: 30}}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto-Bold',
-                                    fontSize: 30}}>92km</Text>
+                        <Text style = {{color: 'green', fontFamily: 'Roboto-Bold',
+                                    fontSize: 20}}>August</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {() => {navigation.navigate('Home')}}>
+                    <View style = {{height: 50, width: 170, alignItems: 'center', 
+                                    backgroundColor: 'white', justifyContent: 'center',
+                                    borderRadius: 40, marginVertical: 30}}>
+                        <Text style = {{color: 'green', fontFamily: 'Roboto-Bold',
+                                    fontSize: 20}}>92km</Text>
                     </View>
                 </TouchableOpacity>
             </View>
-            {/* the top reward purchased switch buttons */}
-            <View style={{height: 65, backgroundColor: '#068D3C', flexDirection: 'row', justifyContent: 'space-between'}} >
+            {/* the date of today */}
+            <View style={{height: 56, backgroundColor: '#DFECDC', flexDirection: 'row', justifyContent: 'center'}} >
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
-                        <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Your Rewards</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
-                        <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Purchased(0)</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            {/* the four mode switch (online, instore and expiry) buttons */}
-            <View style={{height: 56, backgroundColor: '#DFECDC', flexDirection: 'row', justifyContent: 'space-between'}} >
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 25, width: 90, alignItems: 'center', justifyContent: 'center', 
-                                    backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'black' }}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>View All</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 25, width: 90, alignItems: 'center', justifyContent: 'center', 
-                                    backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'black' }}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>Online</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 25, width: 90, alignItems: 'center', justifyContent: 'center', 
-                                    backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'black' }}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>In-store</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 25, width: 90, alignItems: 'center', justifyContent: 'center', 
-                                    backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'black' }}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>Expiry</Text>
+                    <View style = {{height: 25, width: 200, alignItems: 'center', justifyContent: 'center', 
+                                    backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'grey' }}>
+                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>SAT, 29TH</Text>
                     </View>
                 </TouchableOpacity>
             </View>
             {/* display the cards */}
             <View style={{backgroundColor: '#DFECDC', alignItems: 'center', justifyContent: 'center'}} >
-                <Text style={styles.text}>ONLINE</Text>
-                <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
-                    <Image
-                        source={require("../img/colesCard.png")}
-                        style={{width: '60%', height: 130, borderRadius: 20, 
-                                marginLeft: 115, marginTop: 70}}
-                    />
-                </ImageBackground>
                 <View style={{width: '95%', height: 40, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}} >
                     <Text style={styles.textSmall}>Coles $5 egift card</Text>
                 </View>
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
-                    <View style = {{height: 50, width: 200, backgroundColor: '#068D3C', 
-                                    alignItems: 'center', justifyContent: 'center', 
-                                    borderRadius: 40, marginVertical: 10}}>
-                        <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 22}}>Redeem for 5km</Text>
-                    </View>
+                    <Text style = {{color: 'green', fontFamily: 'Roboto-Bold',
+                            fontSize: 20, marginRight: 200, marginTop: 10}}>Not Correct?</Text>
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
