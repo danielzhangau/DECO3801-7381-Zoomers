@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
 const LoadingScreen = ({navigation}) => {
     const loading_text = "Get Rewarded for All Your Public Transport Travel"

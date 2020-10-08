@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const StatisticMapScreen = (navigation) => {
+const StatisticMapScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <Image

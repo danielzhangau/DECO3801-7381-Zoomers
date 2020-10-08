@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const StatisticTreeScreen = (navigation) => {
+const StatisticTreeScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <Image
@@ -12,7 +12,7 @@ const StatisticTreeScreen = (navigation) => {
         <Text style={styles.textBig}>1</Text>
         <Text style={styles.textBig}>trees saved</Text>
         <Text>{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Signup')}}>
+        <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticMapScreen' })}}>
             <Text style = {styles.textUnderline}>How world change?</Text>
         </TouchableOpacity>
       </View>

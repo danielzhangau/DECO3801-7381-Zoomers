@@ -14,7 +14,7 @@ import RewardScreen from '../screens/RewardPageScreen';
 import StatisticScreen from '../screens/StatisticPageScreen';
 import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
 import StatisticMapScreen from '../screens/StatisticMapPageScreen';
-import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList, StatisticTreeParamList, StatisticMapParamList } from '../types';
+import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList} from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -73,20 +73,6 @@ export default function BottomTabNavigator() {
         component={StatisticNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="md-analytics" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="StatisticTree"
-        component={StatisticTreeNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="StatisticMap"
-        component={StatisticMapNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -196,34 +182,16 @@ function StatisticNavigator() {
         component={StatisticScreen}
         options={{ headerTitle: 'Statistic' }}
       />
-    </StatisticStack.Navigator>
-  );
-}
-
-const StatisticTreeStack = createStackNavigator<StatisticTreeParamList>();
-
-function StatisticTreeNavigator() {
-  return (
-    <StatisticTreeStack.Navigator>
-      <StatisticTreeStack.Screen
+      <StatisticStack.Screen
         name="StatisticTreeScreen"
         component={StatisticTreeScreen}
         options={{ headerTitle: 'StatisticTree' }}
       />
-    </StatisticTreeStack.Navigator>
-  );
-}
-
-const StatisticMapStack = createStackNavigator<StatisticMapParamList>();
-
-function StatisticMapNavigator() {
-  return (
-    <StatisticMapStack.Navigator>
-      <StatisticMapStack.Screen
+      <StatisticStack.Screen
         name="StatisticMapScreen"
         component={StatisticMapScreen}
         options={{ headerTitle: 'StatisticMap' }}
       />
-    </StatisticMapStack.Navigator>
+    </StatisticStack.Navigator>
   );
 }

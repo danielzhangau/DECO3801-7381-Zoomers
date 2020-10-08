@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const StatisticScreen = (navigation) => {
+const StatisticScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <Image
@@ -15,7 +15,7 @@ const StatisticScreen = (navigation) => {
           style={{width: 320, height: 300}}
         />
         <Text >{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Signup')}}>
+        <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticTreeScreen' })}}>
           <View style = {{height: 50, width: 300, backgroundColor: 'white', 
                           alignItems: 'center', justifyContent: 'center', 
                           borderRadius: 40, marginVertical: 10}}>

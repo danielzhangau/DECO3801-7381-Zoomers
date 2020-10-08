@@ -41,12 +41,6 @@ export type RewardParamList = {
 
 export type StatisticParamList = {
   StatisticScreen: undefined;
-};
-
-export type StatisticTreeParamList = {
   StatisticTreeScreen: undefined;
-};
-
-export type StatisticMapParamList = {
   StatisticMapScreen: undefined;
 };
