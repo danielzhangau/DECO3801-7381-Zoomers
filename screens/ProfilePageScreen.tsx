@@ -23,7 +23,7 @@ const ProfileScreen = ({navigation}) => {
                                 fontSize: 22}}>REDEEM NOW</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress = {() => {navigation.navigate('Login')}}>
+            <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}}> 
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                                 alignItems: 'center', justifyContent: 'center', 
                                 borderRadius: 40, marginVertical: 5}}>

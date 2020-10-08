@@ -34,13 +34,6 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Profile"
-        component={ProfileNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="md-person" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
         name="Reward"
         component={RewardNavigator}
         options={{
@@ -52,6 +45,13 @@ export default function BottomTabNavigator() {
         component={StatisticNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="md-analytics" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="md-person" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -104,7 +104,7 @@ function ProfileNavigator() {
       <ProfileStack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
-        options={{ headerTitle: 'Profile' }}
+        options={{ headerTitle: 'Profile Page' }}
       />
     </ProfileStack.Navigator>
   );
@@ -118,7 +118,7 @@ function RewardNavigator() {
       <RewardStack.Screen
         name="RewardScreen"
         component={RewardScreen}
-        options={{ headerTitle: 'Reward' }}
+        options={{ headerTitle: 'Reward Page' }}
       />
     </RewardStack.Navigator>
   );
@@ -132,17 +132,17 @@ function StatisticNavigator() {
       <StatisticStack.Screen
         name="StatisticScreen"
         component={StatisticScreen}
-        options={{ headerTitle: 'Statistic' }}
+        options={{ headerTitle: 'Statistic Page' }}
       />
       <StatisticStack.Screen
         name="StatisticTreeScreen"
         component={StatisticTreeScreen}
-        options={{ headerTitle: 'StatisticTree' }}
+        options={{ headerTitle: 'StatisticTree Page' }}
       />
       <StatisticStack.Screen
         name="StatisticMapScreen"
         component={StatisticMapScreen}
-        options={{ headerTitle: 'StatisticMap' }}
+        options={{ headerTitle: 'StatisticMap Page' }}
       />
     </StatisticStack.Navigator>
   );

@@ -68,7 +68,7 @@ const RewardScreen = ({navigation}) => {
                 <Text style={styles.text}>ONLINE</Text>
                 <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/coles%20gift%20card.png"}}
+                        source={require("../img/colesCard.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
@@ -128,7 +128,7 @@ const RewardScreen = ({navigation}) => {
 
                 <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/coles%20gift%20card.png"}}
+                        source={require("../img/colesCard.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
