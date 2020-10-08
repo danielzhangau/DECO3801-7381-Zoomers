@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, Button, Text, Image, TextInput, View } from 'react-native';
+import Inputs from '../inputs.js'
 
 const LoginScreen = ({navigation}) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,7 +13,7 @@ const LoginScreen = ({navigation}) => {
           style={{width: 200, height: 200}}
       />
 
-      <TextInput
+      {/* <TextInput
         style={styles.textInput}
         placeholder="Your username"
         placeholderTextColor='#787878'
@@ -30,7 +31,8 @@ const LoginScreen = ({navigation}) => {
               <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
                           fontSize: 22}}>LOG IN</Text>
           </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      <Inputs />
       <Text style={styles.text}>New to here?</Text>
       <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'SignupScreen' })}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
