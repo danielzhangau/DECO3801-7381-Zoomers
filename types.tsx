@@ -4,15 +4,11 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  Loading: undefined;
-  Login: undefined;
-  Signup: undefined;
   Home: undefined;
   Profile: undefined;
   Reward: undefined;
   Statistic: undefined;
-  StatisticTree: undefined;
-  StatisticMap: undefined;
+  Trip: undefined;
 };
 
 export type HomeParamList = {
@@ -20,6 +16,10 @@ export type HomeParamList = {
   LoginScreen: undefined;
   SignupScreen: undefined;
   HomeScreen: undefined;
+};
+
+export type TripParamList = {
+  TripScreen: undefined;
 };
 
 export type ProfileParamList = {

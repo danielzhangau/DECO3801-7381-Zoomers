@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text, TouchableHighlight } from 'react-native';
 
-const RewardScreen = ({navigation}) => {
+const TripScreen = ({navigation}) => {
     return (
       <ScrollView>
         <View style={{
@@ -106,9 +106,9 @@ const RewardScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
-                <ImageBackground source={require("../img/airbnb_p.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/airbnb%20p.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={require("../img/airbnb.png")}
+                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/airbnb.png"}}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
@@ -166,4 +166,4 @@ const styles = StyleSheet.create({
     },
   })
 
-export default RewardScreen;
+export default TripScreen;

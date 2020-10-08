@@ -8,13 +8,14 @@ import useColorScheme from '../hooks/useColorScheme';
 import LoadingScreen from '../screens/LoadingPageScreen';
 import LoginScreen from '../screens/LoginPageScreen';
 import SignupScreen from '../screens/SignupPageScreen';
-import ProfileScreen from '../screens/ProfilePageScreen';
+import TripScreen from '../screens/TripPageScreen';
 import HomeScreen from '../screens/HomePageScreen';
 import RewardScreen from '../screens/RewardPageScreen';
 import StatisticScreen from '../screens/StatisticPageScreen';
 import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
 import StatisticMapScreen from '../screens/StatisticMapPageScreen';
-import { BottomTabParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList} from '../types';
+import ProfileScreen from '../screens/ProfilePageScreen';
+import { BottomTabParamList, HomeParamList, TripParamList, RewardParamList, StatisticParamList, ProfileParamList} from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -29,6 +30,13 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Home"
         component={HomeNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Trip"
+        component={TripNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
         }}
@@ -93,6 +101,20 @@ function HomeNavigator() {
         options={{ headerTitle: 'Home Page' }}
       />
     </HomeStack.Navigator>
+  );
+}
+
+const TripStack = createStackNavigator<TripParamList>();
+
+function TripNavigator() {
+  return (
+    <TripStack.Navigator>
+      <TripStack.Screen
+        name="TripScreen"
+        component={TripScreen}
+        options={{ headerTitle: 'Trip Page' }}
+      />
+    </TripStack.Navigator>
   );
 }
 
