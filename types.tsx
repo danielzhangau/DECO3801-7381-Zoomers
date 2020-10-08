@@ -15,19 +15,10 @@ export type BottomTabParamList = {
   StatisticMap: undefined;
 };
 
-export type LoadingParamList = {
-  LoadingScreen: undefined;
-};
-
-export type LoginParamList = {
-  LoginScreen: undefined;
-};
-
-export type SignupParamList = {
-  SignupScreen: undefined;
-};
-
 export type HomeParamList = {
+  LoadingScreen: undefined;
+  LoginScreen: undefined;
+  SignupScreen: undefined;
   HomeScreen: undefined;
 };
 

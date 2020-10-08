@@ -23,7 +23,7 @@ const LoginScreen = ({navigation}) => {
         placeholderTextColor='#787878'
         secureTextEntry={true}
       />
-      <TouchableOpacity onPress = {() => {navigation.navigate('Home')}}>
+      <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'HomeScreen' })}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                           alignItems: 'center', justifyContent: 'center', 
                           borderRadius: 40, marginVertical: 10}}>
@@ -32,7 +32,7 @@ const LoginScreen = ({navigation}) => {
           </View>
       </TouchableOpacity>
       <Text style={styles.text}>New to here?</Text>
-      <TouchableOpacity onPress = {() => {navigation.navigate('Signup')}}>
+      <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'SignupScreen' })}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                           alignItems: 'center', justifyContent: 'center', 
                           borderRadius: 40, marginVertical: 10}}>
