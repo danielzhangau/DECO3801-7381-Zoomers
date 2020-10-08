@@ -8,12 +8,14 @@ client.connect((err, client2) => {
   // specify the DB's name
   const db = client2.db("GreenMiles");
   const collection = db.collection("userdata");
-  var myobj = { user: "Daniel ZHANG", distance: "37" };
+
+  var myobj = { user: "Daniel ZHANG", password: "daniel", miles: "37" };
   collection.insertOne(myobj, function(err, r) {
     if (err) throw err;
     console.log('inside insertOne')
     // close connection
     client2.close();
   });
+
   console.log("Database created!", db.databaseName, collection.collectionName);
 });
