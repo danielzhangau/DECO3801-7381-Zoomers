@@ -21,3 +21,6 @@ export default function App() {
     );
   }
 }
+
+// use for import icons
+// https://ionicframework.com/docs/v3/ionicons/
