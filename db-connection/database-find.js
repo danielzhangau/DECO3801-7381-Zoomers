@@ -8,11 +8,15 @@ client.connect((err, client2) => {
   // specify the DB's name
   const db = client2.db("GreenMiles");
   const collection = db.collection("userdata");
-
-  collection.find({}).toArray(function(err, result) {
-    if (err) throw err;
-    console.log(result);
-    client2.close();
-  })
+  
+  var query = { user: "Daniel ZHANG" };
+  function find() {
+    collection.find(query).toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      client2.close();
+    })
+  }
+  find()
   console.log("Database created!", db.databaseName, collection.collectionName);
 });

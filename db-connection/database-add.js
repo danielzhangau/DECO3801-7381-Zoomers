@@ -19,3 +19,5 @@ client.connect((err, client2) => {
 
   console.log("Database created!", db.databaseName, collection.collectionName);
 });
+
+export default client;
