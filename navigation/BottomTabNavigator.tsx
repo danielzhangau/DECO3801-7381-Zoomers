@@ -38,7 +38,7 @@ export default function BottomTabNavigator() {
         name="Trip"
         component={TripNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="md-bus" color={color} />,
         }}
       />
       <BottomTab.Screen
