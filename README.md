@@ -1,5 +1,5 @@
 # DECO3801/7381
-# React_native_app_zoomer
+# React native app -  GreenMiles
 We are team named 'We are AWESOME!!!'
 
 Team members: Thomas Chen, Bosheng Zhang, Junyi Xie, Eden Ke, Jonathan Lau, Lester Phua
