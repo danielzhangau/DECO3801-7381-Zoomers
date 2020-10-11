@@ -1,13 +1,17 @@
+// import client from '../db-connection/database-add';
 import React, { useState, Component } from 'react';
 import { TouchableOpacity, StyleSheet, Button, Image, TextInput } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
-class Inputs extends Component {
-  state = {
-    username: '',
-    password: '',
-    checkpassword: ''
+class Inputs extends React.Component<{ value: string }, { }> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+      checkpassword: ''
+    };
   }
   handleUsername = (text) => {
     this.setState({ username: text })
@@ -25,6 +29,22 @@ class Inputs extends Component {
       alert('username: ' + user + ' password: ' + pass)
     }
     // this.props.navigation.navigate('Home', { screen: 'HomeScreen' })
+    // client.connect((err, client2) => {
+    //   if (err) throw err;
+    //   // specify the DB's name
+    //   const db = client2.db("GreenMiles");
+    //   const collection = db.collection("userdata");
+    
+    //   var myobj = { user: user, password: pass, miles: "37" };
+    //   collection.insertOne(myobj, function(err, r) {
+    //     if (err) throw err;
+    //     console.log('inside insertOne')
+    //     // close connection
+    //     client2.close();
+    //   });
+    
+    //   console.log("Database created!", db.databaseName, collection.collectionName);
+    // });
   }
   render() {
     return (
@@ -39,7 +59,7 @@ class Inputs extends Component {
         />
         <View style={styles.separator} lightColor="#707070" darkColor="#515151" />
 
-        <Text style={styles.text}>Your password</Text>
+        <Text style={styles.textpassword}>Your password</Text>
         <TextInput
           style={styles.textInput}
           underlineColorAndroid = "transparent"
@@ -158,6 +178,15 @@ const styles = StyleSheet.create({
       textShadowOffset: {width: 0, height: 3},
       textShadowRadius: 4
   },
+  textpassword: {
+    fontFamily: 'Roboto-Bold',
+    fontSize: 25,
+    color: 'white',
+    marginRight: 185,
+    textShadowColor: '#3B3A3A',
+    textShadowOffset: {width: 0, height: 3},
+    textShadowRadius: 4
+},
   textInput: {
       height: 45,
       width: 300,
