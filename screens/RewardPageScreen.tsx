@@ -26,13 +26,13 @@ const RewardScreen = ({navigation}) => {
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                     <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Your Rewards</Text>
+                                    fontSize: 20}}>Browse Rewards</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                     <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Purchased(0)</Text>
+                                    fontSize: 20}}>Available(0)</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -59,7 +59,7 @@ const RewardScreen = ({navigation}) => {
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                     <View style = {{height: 25, width: 90, alignItems: 'center', justifyContent: 'center', 
                                     backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'black' }}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>Expiry</Text>
+                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>History</Text>
                     </View>
                 </TouchableOpacity>
             </View>
