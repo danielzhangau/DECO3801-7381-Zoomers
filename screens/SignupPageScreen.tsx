@@ -49,6 +49,7 @@ class Inputs extends React.Component<{ value: string }, { }> {
   render() {
     return (
       <View style = {styles.container}>
+        <View style={styles.separator} lightColor="#707070" darkColor="#515151" />
         <TextInput
           style={styles.textInput}
           underlineColorAndroid = "transparent"
@@ -57,7 +58,6 @@ class Inputs extends React.Component<{ value: string }, { }> {
           placeholderTextColor='#787878' 
           onChangeText = {this.handleUsername}
         />
-        <View style={styles.separator} lightColor="#707070" darkColor="#515151" />
 
         <Text style={styles.textpassword}>Your password</Text>
         <TextInput
@@ -80,16 +80,19 @@ class Inputs extends React.Component<{ value: string }, { }> {
         />
         <TouchableOpacity onPress = {() => {
           if (this.state.username == '' || this.state.password == '' || this.state.checkpassword == '') {
-              alert('please make sure your entered your username and password')
+            alert('please make sure your entered your username and password')
           } else {
-              this.signUp(this.state.username, this.state.password, this.state.checkpassword)
+            //alert('nav to the home page')
+
+            // this.props.navigation.navigate('Home', { screen: 'HomeScreen' }),
+            this.signUp(this.state.username, this.state.password, this.state.checkpassword)
           }
           }}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
-                          alignItems: 'center', justifyContent: 'center', 
-                          borderRadius: 40, marginVertical: 30}}>
-              <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                          fontSize: 22}}>SIGN UP</Text>
+                        alignItems: 'center', justifyContent: 'center', 
+                        borderRadius: 40, marginVertical: 30}}>
+            <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
+                        fontSize: 22}}>Check Input</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -98,7 +101,6 @@ class Inputs extends React.Component<{ value: string }, { }> {
 }
 
 const SignupScreen = ({navigation}) => {
-  const [text, setText] = useState('');
   return (
     <View style={styles.container}>
       <Image
@@ -119,10 +121,10 @@ const SignupScreen = ({navigation}) => {
         placeholderTextColor='#787878'
       />
       <Inputs />
-
       {/* <TextInput
         style={styles.textInput}
         placeholder="Given name"
+        onChangeText={text => setText(text)}
         placeholderTextColor='#787878'
       />
 
@@ -141,7 +143,7 @@ const SignupScreen = ({navigation}) => {
         placeholder="Confirm your password"
         secureTextEntry={true}
         placeholderTextColor='#787878'
-      />
+      /> */}
 
       <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
@@ -150,55 +152,55 @@ const SignupScreen = ({navigation}) => {
               <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
                           fontSize: 22}}>SIGN UP</Text>
           </View>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      backgroundColor: '#068D3C',
-      justifyContent: 'center',
-      alignItems: 'center',
-      fontFamily: 'Roboto',
+    flex: 1,
+    backgroundColor: '#068D3C',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontFamily: 'Roboto',
   },
   separator: {
-      marginVertical: 30,
-      height: 1,
-      width: '80%',
+    marginVertical: 22,
+    height: 1,
+    width: '80%',
   },
   text: {
-      fontFamily: 'Roboto-Bold',
-      fontSize: 25,
-      color: 'white',
-      alignSelf: 'flex-start',
-      marginLeft: 50,
-      textShadowColor: '#3B3A3A',
-      textShadowOffset: {width: 0, height: 3},
-      textShadowRadius: 4
+    fontFamily: 'Roboto-Bold',
+    fontSize: 25,
+    color: 'white',
+    alignSelf: 'flex-start',
+    marginLeft: 50,
+    textShadowColor: '#3B3A3A',
+    textShadowOffset: {width: 0, height: 3},
+    textShadowRadius: 4
   },
   textpassword: {
     fontFamily: 'Roboto-Bold',
     fontSize: 25,
     color: 'white',
-    marginRight: 185,
+    marginTop: 15,
+    marginRight: 110,
     textShadowColor: '#3B3A3A',
     textShadowOffset: {width: 0, height: 3},
     textShadowRadius: 4
 },
   textInput: {
-      height: 45,
-      width: 300,
-      fontSize: 20,
-      borderColor: '#707070',
-      borderWidth: 1,
-      marginTop: 10,
-      backgroundColor: '#FFFFFF',
-      opacity: 0.43,
-      color: '#000000',
-      paddingLeft: 10,
-      
+    height: 45,
+    width: 300,
+    fontSize: 20,
+    borderColor: '#707070',
+    borderWidth: 1,
+    marginTop: 10,
+    backgroundColor: '#FFFFFF',
+    opacity: 0.43,
+    color: '#000000',
+    paddingLeft: 10, 
   }
 })
 

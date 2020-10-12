@@ -1,6 +1,5 @@
-import React, { useState, Component } from 'react';
-import { StyleSheet, TouchableOpacity, Button, Text, Image, TextInput, View } from 'react-native';
-// import Inputs from '../inputs.js'
+import React, { Component } from 'react';
+import { StyleSheet, TouchableOpacity, Text, Image, TextInput, View } from 'react-native';
 
 class Inputs extends Component {
   state = {
@@ -15,7 +14,6 @@ class Inputs extends Component {
   }
   login = (user, pass) => {
       alert('username: ' + user + ' password: ' + pass)
-      // this.props.navigation.navigate('Home', { screen: 'HomeScreen' })
   }
   render() {
       return (
@@ -48,7 +46,7 @@ class Inputs extends Component {
                                   alignItems: 'center', justifyContent: 'center', 
                                   borderRadius: 40, marginVertical: 10}}>
                       <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                                  fontSize: 22}}>LOG IN</Text>
+                                  fontSize: 22}}>Check Input</Text>
                   </View>
               </TouchableOpacity>
           </View>
@@ -57,9 +55,6 @@ class Inputs extends Component {
 }
 
 const LoginScreen = ({navigation}) => {
-  const [isLogin, setIsLogin] = useState(true);
-  // const [isSignup, setIsSignup] = useState(true);
-
   return (
     <View style={styles.container}>
       <Image
@@ -77,7 +72,9 @@ const LoginScreen = ({navigation}) => {
         placeholder="Your password"
         placeholderTextColor='#787878'
         secureTextEntry={true}
-      />
+      /> */}
+      <Inputs />
+      <Text >{"\n"}</Text>
       <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'HomeScreen' })}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                           alignItems: 'center', justifyContent: 'center', 
@@ -85,8 +82,7 @@ const LoginScreen = ({navigation}) => {
               <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
                           fontSize: 22}}>LOG IN</Text>
           </View>
-      </TouchableOpacity> */}
-      <Inputs />
+      </TouchableOpacity>
       <Text style={styles.text}>New to here?</Text>
       <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'SignupScreen' })}}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
