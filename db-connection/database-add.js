@@ -1,4 +1,5 @@
-async function main(user, pass){
+// Export it to make it available outside
+export const addUser = (user, pass) => {
   const MongoClient = require('mongodb').MongoClient;
   const uri = "mongodb+srv://greenmiles:greenmiles@greenmiles.xbeih.mongodb.net/GreenMiles?authSource=admin&replicaSet=atlas-14319z-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
 
@@ -21,7 +22,4 @@ async function main(user, pass){
     console.log("Database created!", db.databaseName, collection.collectionName);
   });
 }
-main("tho", "234")
-
-// Export it to make it available outside
-module.exports.main = main;
+addUser("tho", "234")

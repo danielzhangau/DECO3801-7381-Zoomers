@@ -1,6 +1,7 @@
-// import client from '../db-connection/database-add';
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
+// import { addUser } from '../db-connection/database-add.js';
+import * as database from '../db-connection/database-add.js'; 
 
 class Inputs extends Component<{ value: string }, { }> {
   state = {
@@ -59,7 +60,10 @@ class Inputs extends Component<{ value: string }, { }> {
             alert('please make sure your entered your username and password')
           } else {
             this.signUp(this.state.username, this.state.password, this.state.checkpassword)
+            // addUser(this.state.username, this.state.password)
           }
+          // database.addUser(this.state.username, this.state.password)
+          // addUser(this.state.username, this.state.password)
           }}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                         alignItems: 'center', justifyContent: 'center', 
