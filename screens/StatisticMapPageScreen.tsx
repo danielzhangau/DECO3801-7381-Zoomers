@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const StatisticScreen = ({navigation}) => {
+const StatisticMapScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <Image
@@ -15,7 +15,7 @@ const StatisticScreen = ({navigation}) => {
           style={{width: 320, height: 300}}
         />
         <Text >{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticTreeScreen' })}}>
+        <TouchableOpacity onPress = {() => {navigation.navigate('Signup')}}>
           <View style = {{height: 50, width: 300, backgroundColor: 'white', 
                           alignItems: 'center', justifyContent: 'center', 
                           borderRadius: 40, marginVertical: 10}}>
@@ -30,7 +30,7 @@ const StatisticScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
       flex: 1,
-      backgroundColor: '#068D3C',
+      backgroundColor: '#D0ECC9',
       justifyContent: 'center',
       alignItems: 'center',
       fontFamily: 'Roboto',
@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
       textShadowColor: '#3B3A3A',
       textShadowOffset: {width: 0, height: 3},
       textShadowRadius: 4,
-      color: 'white',
+      color: '#309200',
       marginBottom: 20
   }
 })
 
-export default StatisticScreen;
+export default StatisticMapScreen;

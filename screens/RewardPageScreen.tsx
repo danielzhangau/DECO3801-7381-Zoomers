@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text, TouchableHighlight } from 'react-native';
 
 const RewardScreen = ({navigation}) => {
     return (
@@ -26,13 +26,13 @@ const RewardScreen = ({navigation}) => {
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                     <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Your Rewards</Text>
+                                    fontSize: 20}}>Browse Rewards</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                     <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Purchased(0)</Text>
+                                    fontSize: 20}}>Available(0)</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -59,16 +59,16 @@ const RewardScreen = ({navigation}) => {
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
                     <View style = {{height: 25, width: 90, alignItems: 'center', justifyContent: 'center', 
                                     backgroundColor: 'white', borderRadius: 40, marginVertical: 18, borderWidth: 1, borderColor: 'black' }}>
-                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>Expiry</Text>
+                        <Text style = {{color: 'black', fontFamily: 'Roboto', fontSize: 17}}>History</Text>
                     </View>
                 </TouchableOpacity>
             </View>
             {/* display the cards */}
             <View style={{backgroundColor: '#DFECDC', alignItems: 'center', justifyContent: 'center'}} >
                 <Text style={styles.text}>ONLINE</Text>
-                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/Coles-supermarket.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/coles%20gift%20card.png"}}
+                        source={require("../img/colesCard.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
@@ -86,9 +86,9 @@ const RewardScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
-                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/HOYTS-Frankston-Recliner.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={require("../img/HOYTS-Frankston-Recliner.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/hotys.png"}}
+                        source={require("../img/hotys.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
@@ -106,9 +106,9 @@ const RewardScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
-                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/airbnb%20p.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={require("../img/airbnb_p.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/airbnb.png"}}
+                        source={require("../img/airbnb.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />
@@ -126,9 +126,9 @@ const RewardScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Text>{"\n"}</Text>
 
-                <ImageBackground source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/Coles-supermarket.jpg"}} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
-                        source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/coles%20gift%20card.png"}}
+                        source={require("../img/colesCard.png")}
                         style={{width: '60%', height: 130, borderRadius: 20, 
                                 marginLeft: 115, marginTop: 70}}
                     />

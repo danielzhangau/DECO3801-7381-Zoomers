@@ -7,12 +7,15 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import LoadingScreen from '../screens/LoadingPageScreen';
 import LoginScreen from '../screens/LoginPageScreen';
-import ProfileScreen from '../screens/ProfilePageScreen';
 import SignupScreen from '../screens/SignupPageScreen';
+import TripScreen from '../screens/TripPageScreen';
 import HomeScreen from '../screens/HomePageScreen';
 import RewardScreen from '../screens/RewardPageScreen';
 import StatisticScreen from '../screens/StatisticPageScreen';
-import { BottomTabParamList, LoadingParamList, LoginParamList, SignupParamList, HomeParamList, ProfileParamList, RewardParamList, StatisticParamList } from '../types';
+import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
+import StatisticMapScreen from '../screens/StatisticMapPageScreen';
+import ProfileScreen from '../screens/ProfilePageScreen';
+import { BottomTabParamList, HomeParamList, TripParamList, RewardParamList, StatisticParamList, ProfileParamList} from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -22,55 +25,41 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Loading"
+      initialRouteName="Home"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
-      <BottomTab.Screen
-        name="Loading"
-        component={LoadingNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="Login"
-        component={LoginNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="Signup"
-        component={SignupNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-      />
       <BottomTab.Screen
         name="Home"
         component={HomeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="Profile"
-        component={ProfileNavigator}
+        name="Trip"
+        component={TripNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="md-bus" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Reward"
         component={RewardNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="md-basket" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Statistic"
         component={StatisticNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="md-analytics" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="md-person" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -86,59 +75,46 @@ function TabBarIcon(props: { name: string; color: string }) {
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 
-const LoadingStack = createStackNavigator<LoadingParamList>();
-
-function LoadingNavigator() {
-  return (
-    <LoadingStack.Navigator>
-      <LoadingStack.Screen
-        name="LoadingScreen"
-        component={LoadingScreen}
-        options={{ headerTitle: 'Loading Page' }}
-      />
-    </LoadingStack.Navigator>
-  );
-}
-
-const LoginStack = createStackNavigator<LoginParamList>();
-
-function LoginNavigator() {
-  return (
-    <LoginStack.Navigator>
-      <LoginStack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
-        options={{ headerTitle: 'Login Page' }}
-      />
-    </LoginStack.Navigator>
-  );
-}
-
-const SignupStack = createStackNavigator<SignupParamList>();
-
-function SignupNavigator() {
-  return (
-    <SignupStack.Navigator>
-      <SignupStack.Screen
-        name="SignupScreen"
-        component={SignupScreen}
-        options={{ headerTitle: 'Signup Page' }}
-      />
-    </SignupStack.Navigator>
-  );
-}
-
 const HomeStack = createStackNavigator<HomeParamList>();
 
 function HomeNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
+        name="LoadingScreen"
+        component={LoadingScreen}
+        options={{ headerTitle: 'Loading Page' }}
+      />
+      <HomeStack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{ headerTitle: 'Login Page' }}
+      />
+      <HomeStack.Screen
+        name="SignupScreen"
+        component={SignupScreen}
+        options={{ headerTitle: 'Signup Page' }}
+      />
+      <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={{ headerTitle: 'Home Page' }}
       />
     </HomeStack.Navigator>
+  );
+}
+
+const TripStack = createStackNavigator<TripParamList>();
+
+function TripNavigator() {
+  return (
+    <TripStack.Navigator>
+      <TripStack.Screen
+        name="TripScreen"
+        component={TripScreen}
+        options={{ headerTitle: 'Trip Page' }}
+      />
+    </TripStack.Navigator>
   );
 }
 
@@ -150,7 +126,7 @@ function ProfileNavigator() {
       <ProfileStack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
-        options={{ headerTitle: 'Profile' }}
+        options={{ headerTitle: 'Profile Page' }}
       />
     </ProfileStack.Navigator>
   );
@@ -164,7 +140,7 @@ function RewardNavigator() {
       <RewardStack.Screen
         name="RewardScreen"
         component={RewardScreen}
-        options={{ headerTitle: 'Reward' }}
+        options={{ headerTitle: 'Reward Page' }}
       />
     </RewardStack.Navigator>
   );
@@ -178,7 +154,17 @@ function StatisticNavigator() {
       <StatisticStack.Screen
         name="StatisticScreen"
         component={StatisticScreen}
-        options={{ headerTitle: 'Statistic' }}
+        options={{ headerTitle: 'Statistic Page' }}
+      />
+      <StatisticStack.Screen
+        name="StatisticTreeScreen"
+        component={StatisticTreeScreen}
+        options={{ headerTitle: 'StatisticTree Page' }}
+      />
+      <StatisticStack.Screen
+        name="StatisticMapScreen"
+        component={StatisticMapScreen}
+        options={{ headerTitle: 'StatisticMap Page' }}
       />
     </StatisticStack.Navigator>
   );

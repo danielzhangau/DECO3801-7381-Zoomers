@@ -1,34 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
 
 const LoadingScreen = ({navigation}) => {
     const loading_text = "Get Rewarded for All Your Public Transport Travel"
     return (
-        <TouchableOpacity onPress = {() => {navigation.navigate('Login')}} style={styles.container}>
-            <Image
-                source={require('./../img/green_miles.png')}
-                // source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green_miles.png"}}
-                style={{width: 290, height: 290, marginTop: 80}}
-            />
-            <Text style={styles.text}>{loading_text}</Text>
+        <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}} style={styles.container}>
+            <ImageBackground source={require('./../img/small_green.jpg')} style={styles.backgroundImage}>
+                <Image
+                    source={require('./../img/green_miles.png')}
+                    // source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green_miles.png"}}
+                    style={{width: 290, height: 290, marginTop: 80}}
+                />
+                <Text style={styles.text}>{loading_text}</Text>
+            </ImageBackground>
         </TouchableOpacity>
-
-        // <View style={styles.container}>
-            // <Image
-            //     source={{uri: "https://raw.githubusercontent.com/danielzhangau/DECO3801-7381-Zoomers/master/img/green_miles.png"}}
-            //     style={{width: 290, height: 290}}
-            // />
-            // <Text style={styles.text}>{loading_text}</Text>
-        // </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#D0ECC9',
-        alignItems: 'center',
-        
+        flexDirection: "column",
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: "cover",
+        alignItems: 'center', 
+        width: '100%',
     },
     text: {
         width: 282, 

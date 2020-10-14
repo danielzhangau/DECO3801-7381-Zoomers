@@ -7,7 +7,7 @@ const ProfileScreen = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.text}>Good day! HelloWorld</Text>
             <Image
-                source={require('./../img/绿谷.jpg')}
+                source={require('./../img/lvgu.jpg')}
                 style={{width: 190, height: 190, marginVertical: 20, borderRadius: 400/ 2}}
             />
             <Text style={styles.text}>You have travelled by using public transport </Text>
@@ -23,7 +23,7 @@ const ProfileScreen = ({navigation}) => {
                                 fontSize: 22}}>REDEEM NOW</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress = {() => {navigation.navigate('Login')}}>
+            <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}}> 
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                                 alignItems: 'center', justifyContent: 'center', 
                                 borderRadius: 40, marginVertical: 5}}>

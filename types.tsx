@@ -4,29 +4,22 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  Loading: undefined;
-  Login: undefined;
-  Signup: undefined;
   Home: undefined;
   Profile: undefined;
   Reward: undefined;
   Statistic: undefined;
-};
-
-export type LoadingParamList = {
-  LoadingScreen: undefined;
-};
-
-export type LoginParamList = {
-  LoginScreen: undefined;
-};
-
-export type SignupParamList = {
-  SignupScreen: undefined;
+  Trip: undefined;
 };
 
 export type HomeParamList = {
+  LoadingScreen: undefined;
+  LoginScreen: undefined;
+  SignupScreen: undefined;
   HomeScreen: undefined;
+};
+
+export type TripParamList = {
+  TripScreen: undefined;
 };
 
 export type ProfileParamList = {
@@ -39,4 +32,6 @@ export type RewardParamList = {
 
 export type StatisticParamList = {
   StatisticScreen: undefined;
+  StatisticTreeScreen: undefined;
+  StatisticMapScreen: undefined;
 };
