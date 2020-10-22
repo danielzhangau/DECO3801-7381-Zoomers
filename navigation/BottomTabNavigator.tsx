@@ -11,6 +11,7 @@ import SignupScreen from '../screens/SignupPageScreen';
 import TripScreen from '../screens/TripPageScreen';
 import HomeScreen from '../screens/HomePageScreen';
 import RewardScreen from '../screens/RewardPageScreen';
+import RewardAvailableScreen from '../screens/RewardAvailableScreen';
 import StatisticScreen from '../screens/StatisticPageScreen';
 import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
 import StatisticMapScreen from '../screens/StatisticMapPageScreen';
@@ -74,7 +75,6 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-
 const HomeStack = createStackNavigator<HomeParamList>();
 
 function HomeNavigator() {
@@ -141,6 +141,11 @@ function RewardNavigator() {
         name="RewardScreen"
         component={RewardScreen}
         options={{ headerTitle: 'Reward Page' }}
+      />
+      <RewardStack.Screen
+        name="RewardAvailableScreen"
+        component={RewardAvailableScreen}
+        options={{ headerTitle: 'Reward Available Page' }}
       />
     </RewardStack.Navigator>
   );
