@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text, TouchableHighlight } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 const RewardScreen = ({navigation}) => {
     return (
@@ -29,7 +29,7 @@ const RewardScreen = ({navigation}) => {
                                     fontSize: 20}}>Browse Rewards</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                <TouchableOpacity onPress = {() => {navigation.navigate('Reward', { screen: 'RewardAvailableScreen' })}}>
                     <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
                                     fontSize: 20}}>Available(0)</Text>

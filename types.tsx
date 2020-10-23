@@ -28,6 +28,7 @@ export type ProfileParamList = {
 
 export type RewardParamList = {
   RewardScreen: undefined;
+  RewardAvailableScreen: undefined;
 };
 
 export type StatisticParamList = {

@@ -34,11 +34,13 @@ export default {
           Reward: {
             screens: {
               RewardScreen: 'reward',
+              RewardAvailableScreen: 'rewardAvailable',
             },
           },
           Statistic: {
             screens: {
               StatisticScreen: 'statistic',
+              StatisticTreeScreen: 'statisticTree',
             },
           },
         },
