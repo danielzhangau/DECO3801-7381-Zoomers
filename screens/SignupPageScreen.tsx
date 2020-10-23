@@ -3,18 +3,16 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackgr
 import { dbconnect, test2 } from '../db-connection/mydb.js';
 // import { addUser } from '../db-connection/database-add.js';
 // import * as database from '../db-connection/database-add.js'; 
+<<<<<<< HEAD
 import firebase from '../firebase'
+=======
+
+>>>>>>> 58fdfb3299bd076b133967a14ba60dc0924932ce
 class Inputs extends Component<{ value: string }, { }> {
   state = {
-    email: '',
     username: '',
     password: '',
-    checkpassword: '',
-    error: '',
-    loading: false
-  }
-  handleEmail = (text) => {
-    this.setState({ email: text })
+    checkpassword: ''
   }
   handleUsername = (text) => {
     this.setState({ username: text })
@@ -25,11 +23,11 @@ class Inputs extends Component<{ value: string }, { }> {
   handlePasswordCheck = (text) => {
     this.setState({ checkpassword: text })
   }
-  signUp = (email, pass, passCheck) => { 
+  signUp = (user, pass, passCheck) => { 
     if (pass != passCheck) {
       alert('The password your enter is different')
     } else {
-      alert('Email: ' + email + ' Password: ' + pass + '\n You are good to SIGNUP!')
+      alert('Username: ' + user + ' Password: ' + pass + '\n You are good to SIGNUP!')
     }
   }
   render() {
@@ -39,6 +37,7 @@ class Inputs extends Component<{ value: string }, { }> {
         <TextInput
           style={styles.textInput}
           underlineColorAndroid = "transparent"
+<<<<<<< HEAD
           placeholder="Email"
           autoCapitalize = "none"
           placeholderTextColor='#787878'
@@ -54,6 +53,8 @@ class Inputs extends Component<{ value: string }, { }> {
         <TextInput
           style={styles.textInput}
           underlineColorAndroid = "transparent"
+=======
+>>>>>>> 58fdfb3299bd076b133967a14ba60dc0924932ce
           placeholder="Given name as your username"
           autoCapitalize = "none"
           placeholderTextColor='#787878' 
@@ -81,15 +82,14 @@ class Inputs extends Component<{ value: string }, { }> {
           onChangeText = {this.handlePasswordCheck}
         />
         <TouchableOpacity onPress = {() => {
-          if (this.state.email == '' || this.state.username == '' || this.state.password == '' || this.state.checkpassword == '') {
-            alert('please make sure your entered your email, username and password')
+          if (this.state.username == '' || this.state.password == '' || this.state.checkpassword == '') {
+            alert('please make sure your entered your username and password')
           } else {
-            this.signUp(this.state.email, this.state.password, this.state.checkpassword)
-            firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
-            .then(newUserCredentials=>{firebase.database().ref(`/userProfile/${newUserCredentials.user.uid}/email`)
-            .set(this.state.email)});
+            this.signUp(this.state.username, this.state.password, this.state.checkpassword)
+            // addUser(this.state.username, this.state.password)
           }
           // database.addUser(this.state.username, this.state.password)
+<<<<<<< HEAD
           var dbconn = new dbconnect(this.props);
           dbconn.name = this.state.username;
           dbconn.password = this.state.password;
@@ -97,6 +97,9 @@ class Inputs extends Component<{ value: string }, { }> {
           dbconn.onPostUser();
           dbconn.onGetUsers();
           test2(2);
+=======
+          // addUser(this.state.username, this.state.password)
+>>>>>>> 58fdfb3299bd076b133967a14ba60dc0924932ce
           }}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                         alignItems: 'center', justifyContent: 'center', 
@@ -120,7 +123,16 @@ const SignupScreen = ({navigation}) => {
                     alignItems: 'center', justifyContent: 'center', marginBottom: 20, marginTop: 10}}
         />
         <Text style={styles.text}>Your name</Text>
-        
+        <TextInput
+          style={styles.textInput}
+          placeholder="Title"
+          placeholderTextColor='#787878'
+        />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Family name"
+          placeholderTextColor='#787878'
+        />
         <Text >{"\n"}{"\n"}</Text>
         <Inputs />
         <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}}>
