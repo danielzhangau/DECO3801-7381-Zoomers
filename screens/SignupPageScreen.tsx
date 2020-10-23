@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
+import { dbconnect, test2 } from '../db-connection/mydb.js';
 // import { addUser } from '../db-connection/database-add.js';
 // import * as database from '../db-connection/database-add.js'; 
 import firebase from '../firebase'
-
 class Inputs extends Component<{ value: string }, { }> {
   state = {
     email: '',
@@ -35,13 +35,16 @@ class Inputs extends Component<{ value: string }, { }> {
   render() {
     return (
       <View style = {styles.container}>
+        <script src="db-connection/db.js"></script>
         <TextInput
           style={styles.textInput}
           underlineColorAndroid = "transparent"
           placeholder="Email"
           autoCapitalize = "none"
           placeholderTextColor='#787878'
-          onChangeText = {this.handleEmail}
+          onChangeText = {
+            this.handleEmail
+          }
         />
         <TextInput
           style={styles.textInput}
@@ -64,7 +67,9 @@ class Inputs extends Component<{ value: string }, { }> {
           autoCapitalize = "none"
           secureTextEntry={true}
           placeholderTextColor='#787878'
-          onChangeText = {this.handlePassword}
+          onChangeText = {
+            this.handlePassword
+          }
         />
         <TextInput
           style={styles.textInput}
@@ -85,6 +90,13 @@ class Inputs extends Component<{ value: string }, { }> {
             .set(this.state.email)});
           }
           // database.addUser(this.state.username, this.state.password)
+          var dbconn = new dbconnect(this.props);
+          dbconn.name = this.state.username;
+          dbconn.password = this.state.password;
+          dbconn.email = this.state.email;
+          dbconn.onPostUser();
+          dbconn.onGetUsers();
+          test2(2);
           }}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                         alignItems: 'center', justifyContent: 'center', 
