@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { BorderlessButton } from 'react-native-gesture-handler';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const HomeScreen = () => {
     return (
@@ -13,8 +12,23 @@ const HomeScreen = () => {
             <Text style={styles.number}>3</Text>
             <Text style={styles.text}>days left</Text>
             <Text style={styles.text}>to beat Dave</Text>
+            <Text>{"\n"}</Text>
 
-            <Text style={styles.textBig}>Leaderboard here</Text>
+            <FlatList
+                data={[
+                {key: 'Devin'},
+                {key: 'Dan'},
+                {key: 'Dominic'},
+                {key: 'Jackson'},
+                {key: 'James'},
+                {key: 'Joel'},
+                {key: 'John'},
+                {key: 'Jillian'},
+                {key: 'Jimmy'},
+                {key: 'Julie'},
+                ]}
+                renderItem={({item}) => <Text style={styles.text}>{item.key}</Text>}
+            />
         </View>
     )
 }
