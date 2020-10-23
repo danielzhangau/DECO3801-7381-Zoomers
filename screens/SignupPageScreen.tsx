@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
 import { Dbconnect, test2 } from '../db-connection/mydb.js';
 
-class Inputs extends Component<{ value: string }, {}> {
+class Inputs extends Component<{ value: string }, { }> {
   state = {
     email: '',
     username: '',
@@ -36,7 +36,7 @@ class Inputs extends Component<{ value: string }, {}> {
         {/* <script src="db-connection/db.js"></script> */}
         <TextInput
           style={styles.textInput}
-          underlineColorAndroid="transparent"
+          underlineColorAndroid = "transparent"
           placeholder="Email"
           autoCapitalize="none"
           placeholderTextColor='#787878'
@@ -51,7 +51,7 @@ class Inputs extends Component<{ value: string }, {}> {
         />
         <TextInput
           style={styles.textInput}
-          underlineColorAndroid="transparent"
+          underlineColorAndroid = "transparent"
           placeholder="Given name as your username"
           autoCapitalize="none"
           placeholderTextColor='#787878'
