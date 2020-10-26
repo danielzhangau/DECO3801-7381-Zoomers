@@ -83,14 +83,14 @@ class Inputs extends Component<{ value: string }, { }> {
             alert('please make sure your entered your email, username and password')
           } else {
             this.signUp(this.state.email, this.state.password, this.state.checkpassword)
+            var dbconn = new Dbconnect(this.props);
+            dbconn.name = this.state.username;
+            dbconn.password = this.state.password;
+            dbconn.email = this.state.email;
+            dbconn.onPostUser();
+            dbconn.onGetUsers();
           }
-          var dbconn = new Dbconnect(this.props);
-          dbconn.name = this.state.username;
-          dbconn.password = this.state.password;
-          dbconn.email = this.state.email;
-          dbconn.onPostUser();
-          dbconn.onGetUsers();
-          // test2(2);
+          test2(2);
           }}>
 
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 

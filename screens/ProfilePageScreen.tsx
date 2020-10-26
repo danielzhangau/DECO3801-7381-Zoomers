@@ -1,6 +1,5 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Text, View, Image, Button } from 'react-native';
-import { BorderlessButton } from 'react-native-gesture-handler';
 
 const ProfileScreen = ({navigation}) => {
     return (
@@ -15,7 +14,7 @@ const ProfileScreen = ({navigation}) => {
             <Text style={styles.text}>Your available travel money</Text>
             <Text style={styles.number}>92km</Text>
 
-            <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+            <TouchableOpacity onPress = {() => {navigation.navigate('Reward', {screen: 'RewardScreen'})}}>
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                                 alignItems: 'center', justifyContent: 'center', 
                                 borderRadius: 40, marginVertical: 30}}>

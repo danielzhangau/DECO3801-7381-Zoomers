@@ -1,7 +1,46 @@
-import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import React , { useState } from 'react';
+import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text, Alert } from 'react-native';
 
-const RewardScreen = ({navigation}) => {
+
+export default function RewardScreen({navigation}){
+    const [miles, setMiles] = useState(92);
+    const [available, setAvailable] = useState(0);
+
+    function handleButtonClick(points, avail) {
+        setMiles(miles - points)
+        setAvailable(available + avail)
+    }
+
+    const promptColes = () => {
+        const title = 'Are You Sure?';
+        const message = 'You want to redeem coles 5$ gift card for 5km?';
+        const buttons = [
+            { text: 'YES', onPress: () => handleButtonClick(5, 1)},
+            { text: 'NO', type: 'cancel'}
+        ]
+        Alert.alert(title, message, buttons)
+    }
+
+    const promptHoyt = () => {
+        const title = 'Are You Sure?';
+        const message = 'You want to redeem HOYT 15$ egift card for 15km?';
+        const buttons = [
+            { text: 'YES', onPress: () => handleButtonClick(15, 1)},
+            { text: 'NO', type: 'cancel'}
+        ]
+        Alert.alert(title, message, buttons)
+    }
+
+    const promptAirbnb = () => {
+        const title = 'Are You Sure?';
+        const message = 'You want to redeem Airbnb 30$ egift card for 30km?';
+        const buttons = [
+            { text: 'YES', onPress: () => handleButtonClick(30, 1)},
+            { text: 'NO', type: 'cancel'}
+        ]
+        Alert.alert(title, message, buttons)
+    }
+
     return (
       <ScrollView>
         <View style={{
@@ -17,7 +56,7 @@ const RewardScreen = ({navigation}) => {
                                     alignItems: 'center', justifyContent: 'center', 
                                     borderRadius: 40, marginVertical: 30}}>
                         <Text style = {{color: 'black', fontFamily: 'Roboto-Bold',
-                                    fontSize: 30}}>92km</Text>
+                                    fontSize: 30}}>{miles}km</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -32,7 +71,7 @@ const RewardScreen = ({navigation}) => {
                 <TouchableOpacity onPress = {() => {navigation.navigate('Reward', { screen: 'RewardAvailableScreen' })}}>
                     <View style = {{height: 50, width: 170, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
-                                    fontSize: 20}}>Available(0)</Text>
+                                    fontSize: 20}}>Available({available})</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -65,6 +104,7 @@ const RewardScreen = ({navigation}) => {
             </View>
             {/* display the cards */}
             <View style={{backgroundColor: '#DFECDC', alignItems: 'center', justifyContent: 'center'}} >
+                {/* online section */}
                 <Text style={styles.text}>ONLINE</Text>
                 <ImageBackground source={require("../img/Coles-supermarket.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
                     <Image
@@ -76,7 +116,7 @@ const RewardScreen = ({navigation}) => {
                 <View style={{width: '95%', height: 40, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}} >
                     <Text style={styles.textSmall}>Coles $5 egift card</Text>
                 </View>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                <TouchableOpacity onPress = {promptColes}>
                     <View style = {{height: 50, width: 200, backgroundColor: '#068D3C', 
                                     alignItems: 'center', justifyContent: 'center', 
                                     borderRadius: 40, marginVertical: 10}}>
@@ -96,7 +136,7 @@ const RewardScreen = ({navigation}) => {
                 <View style={{width: '95%', height: 40, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}} >
                     <Text style={styles.textSmall}>HOYTS $15 egift card</Text>
                 </View>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                <TouchableOpacity onPress = {promptHoyt}>
                     <View style = {{height: 50, width: 200, backgroundColor: '#068D3C', 
                                     alignItems: 'center', justifyContent: 'center', 
                                     borderRadius: 40, marginVertical: 10}}>
@@ -116,7 +156,7 @@ const RewardScreen = ({navigation}) => {
                 <View style={{width: '95%', height: 40, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}} >
                     <Text style={styles.textSmall}>Airbnb $15 egift card</Text>
                 </View>
-                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                <TouchableOpacity onPress = {promptAirbnb}>
                     <View style = {{height: 50, width: 200, backgroundColor: '#068D3C', 
                                     alignItems: 'center', justifyContent: 'center', 
                                     borderRadius: 40, marginVertical: 10}}>
@@ -144,6 +184,53 @@ const RewardScreen = ({navigation}) => {
                                     fontSize: 22}}>Redeem for 25km</Text>
                     </View>
                 </TouchableOpacity>
+                <Text>{"\n"}</Text>
+                <Text>{"\n"}</Text>
+
+                {/* instore section */}
+                <Text style={styles.text}>IN-STORE</Text>
+                <ImageBackground source={require("../img/hotel.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                    <Image
+                        source={require("../img/hotel_vou.jpg")}
+                        style={{width: '60%', height: 130, borderRadius: 20, 
+                                marginLeft: 115, marginTop: 70}}
+                    />
+                </ImageBackground>
+                <View style={{width: '95%', height: 40, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}} >
+                    <Text style={styles.textSmall}>Hotel $100 voucher</Text>
+                </View>
+                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                    <View style = {{height: 50, width: 200, backgroundColor: '#068D3C', 
+                                    alignItems: 'center', justifyContent: 'center', 
+                                    borderRadius: 40, marginVertical: 10}}>
+                        <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
+                                    fontSize: 22}}>Redeem for 20km</Text>
+                    </View>
+                </TouchableOpacity>
+                <Text>{"\n"}</Text>
+                <Text>{"\n"}</Text>
+
+                {/* history section */}
+                <Text style={styles.text}>HISTORY</Text>
+                <ImageBackground source={require("../img/pizza.jpg")} style={{width: '97.5%', height: 220, marginLeft: 10}} >
+                    <Image
+                        source={require("../img/pizza_vou.jpg")}
+                        style={{width: '60%', height: 130, borderRadius: 20, 
+                                marginLeft: 115, marginTop: 70}}
+                    />
+                </ImageBackground>
+                <View style={{width: '95%', height: 40, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}} >
+                    <Text style={styles.textSmall}>Pizza hut 50% voucher</Text>
+                </View>
+                <Text style={styles.textMiddle}>Expire 3 days ago</Text>
+                <TouchableOpacity onPress = {() => {navigation.navigate('Reward')}}>
+                    <View style = {{height: 50, width: 300, backgroundColor: '#068D3C', 
+                                    alignItems: 'center', justifyContent: 'center', 
+                                    borderRadius: 40, marginVertical: 10}}>
+                        <Text style = {{color: 'white', fontFamily: 'Roboto-Bold',
+                                    fontSize: 22}}>Redeem another for 10km</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
       </ScrollView>
@@ -159,11 +246,16 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginBottom: 10,
     },
+    textMiddle: {
+        fontFamily: 'Roboto-Bold',
+        fontSize: 20,
+        color: 'black',
+        alignSelf: 'center',
+        marginVertical: 10
+    },
     textSmall: {
         fontFamily: 'Roboto',
         fontSize: 20,
         color: 'black',
     },
   })
-
-export default RewardScreen;

@@ -6,8 +6,8 @@ const mysql = require('mysql');
 const connection = mysql.createPool({
     host : 'localhost',
     user : 'root',
-    password : '123456',
-    database : 'test'
+    password : '123',
+    database : 'greenmiles'
 });
 
 const app = express();
@@ -20,7 +20,7 @@ app.get('/users', function(req,res){
             console.log("[error] - " + err.message);
         }
         // res.send(data);
-        connection.query('SELECT * FROM user', function (error, results, fields) {
+        connection.query('SELECT * FROM users', function (error, results, fields) {
             if (error){
                 console.log('[SELECT ERROR] -', err.message);
                 return;
@@ -37,7 +37,7 @@ app.post('/users',function(req,res){
         if(err){
             console.log("[error] - " + err.message);
         }
-        connection.query('INSERT INTO user SET ?',req.body,function(error,rows,fields){
+        connection.query('INSERT INTO users SET ?',req.body,function(error,rows,fields){
             if(!!error) console.log(error.message);
             else {
                 console.log(req.body);
@@ -46,11 +46,10 @@ app.post('/users',function(req,res){
             };
         });
     })
-    
 });
 
 app.get('/users/:id',function(req,res){
-    connection.query('SELECT * FROM user WHERE id=?',req.params.id,function(error,rows,fields){
+    connection.query('SELECT * FROM users WHERE id=?',req.params.id,function(error,rows,fields){
         if(!!error) console.log('error');
         else {
             console.log(rows);
@@ -60,7 +59,7 @@ app.get('/users/:id',function(req,res){
 });
 
 app.delete('/users/:id',function(req,res){
-    connection.query('DELETE FROM user WHERE id=?',req.params.id,function(error,rows,fields){
+    connection.query('DELETE FROM users WHERE id=?',req.params.id,function(error,rows,fields){
         if(!!error) console.log('error');
         else {
             console.log(rows);
@@ -70,7 +69,7 @@ app.delete('/users/:id',function(req,res){
 });
 
 app.put('/users',function(req,res){
-    connection.query('UPDATE user SET name=?,email=?,password=? WHERE id=?',
+    connection.query('UPDATE users SET name=?,email=?,password=? WHERE id=?',
     [req.body.name,req.body.email,req.body.password,req.body.id],function(error,rows,fields){
         if(!!error) console.log('error');
         else {
