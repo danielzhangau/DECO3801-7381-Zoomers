@@ -4,6 +4,7 @@ import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
+            <Text>{"\n"}</Text>
             <Text style={styles.textBig}>Welcome Back!</Text>
             <Text style={styles.text}>You've travelled</Text>
             <Text style={styles.number}>92km</Text>
