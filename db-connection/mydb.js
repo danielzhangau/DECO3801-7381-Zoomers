@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 
+export var data;
 export class dbconnect extends Component {
   constructor(props){
     super(props)
-    this.state = {
-        apiData: [],
-        naData: []
-    }
+    // this.state = {
+    //     apiData: [],
+    //     naData: []
+    // }
     this.uid = null;
     this.name = null;
     this.email = null;
     this.password = null;
   }
   getname(){
-    return this.name;
+    if(data != null){
+      console.log("data111 = "+ data[0].name);
+      return data;
+    }
   }
   onGetUsers () {
     console.log("here is get users");
@@ -22,10 +26,11 @@ export class dbconnect extends Component {
    }).then((response) => {
      return response.json();
    }).then((jsonData) => {
-        this.setState({
-         apiData: jsonData,
-        })
-        console.log(this.state.apiData);
+        // this.setState({
+        //  apiData: jsonData,
+        // })
+        data = jsonData;
+        console.log("data = "+data);
       })
       .catch((error) => {
         console.warn(error);
@@ -61,20 +66,24 @@ export class dbconnect extends Component {
     }
 
   onGetUser = () => {
-   fetch('http://localhost:19006/users/'+ this.uid,{
+    
+   fetch('http://localhost:19006/users/'+ this.name,{
      method: 'GET'
    }).then((response) => {
      return response.json();
    }).then((jsonData) => {
         this.setState({
-         apiData: jsonData,
+          apiData : jsonData
         })
-        console.log(this.state.apiData);
+        data = jsonData;
+        console.log("i am here");
+        console.log(jsonData);
       })
       .catch((error) => {
         console.log(error.message);
-      }).done();
+      });
       this.uid = null;
+      return data;
   }
 
     onDeleteUser = () => {
@@ -84,7 +93,7 @@ export class dbconnect extends Component {
        console.log(response.rows);
      }).catch((error) => {
           console.warn(error);
-        }).done();
+        });
         this.uid = null;
     }
 
@@ -100,7 +109,7 @@ export class dbconnect extends Component {
        return response.json();
      }).catch((error) => {
           console.warn(error);
-        }).done();
+        });
         this.uid = null;
         this.name = null;
         this.email = null;

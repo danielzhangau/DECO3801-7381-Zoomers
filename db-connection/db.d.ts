@@ -16,6 +16,9 @@ declare class dbconnect extends Component{
     onGetUser():any;
     onDeleteUser():any;
     onPutUser():any;
-    getname():String;
+    getname():any;
+    getpassword():any;
+    getEmail():any;
 }
+declare var data:[];
 declare function test2(i:any): number;

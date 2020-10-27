@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Text, Image, TextInput, View, ImageBackground } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, Image, TextInput, View, ImageBackground, Alert } from 'react-native';
+import { dbconnect, test2 } from '../db-connection/mydb.js';
 
+var Check = false;
+var dbconn = new dbconnect();
 class Inputs extends Component {
   state = {
     username: '',
@@ -39,7 +42,16 @@ class Inputs extends Component {
                 if (this.state.username == '' || this.state.password == '') {
                     alert('please make sure your entered your username and password')
                 } else {
-                    this.login(this.state.username, this.state.password)
+                  dbconn.name = this.state.username;
+                  dbconn.onGetUser();
+                  dbconn.onGetUser();
+                  var data = dbconn.getname();
+                  var psw = data[0].password;
+                  console.log("data =" + data[0].password);
+                  if(psw == this.state.password){
+                    this.login(this.state.username, this.state.password);
+                    Check = true;
+                  }
                 }
                 }}>
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
@@ -65,7 +77,15 @@ const LoginScreen = ({navigation}) => {
         />
         <Inputs />
         <Text >{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'HomeScreen' })}}>
+        <TouchableOpacity onPress = {() => {
+          if(Check == true){
+            navigation.navigate('Home', { screen: 'HomeScreen' });
+            Check = false;
+          } else {
+            alert('please make sure your username and password correct!');
+          }
+          
+          }}>
             <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                             alignItems: 'center', justifyContent: 'center', 
                             borderRadius: 40, marginVertical: 10}}>

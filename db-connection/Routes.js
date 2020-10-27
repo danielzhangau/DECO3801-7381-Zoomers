@@ -49,8 +49,8 @@ app.post('/users',function(req,res){
     
 });
 
-app.get('/users/:id',function(req,res){
-    connection.query('SELECT * FROM user WHERE id=?',req.params.id,function(error,rows,fields){
+app.get('/users/:name',function(req,res){
+    connection.query('SELECT * FROM user WHERE name=?',req.params.name,function(error,rows,fields){
         if(!!error) console.log('error');
         else {
             console.log(rows);
