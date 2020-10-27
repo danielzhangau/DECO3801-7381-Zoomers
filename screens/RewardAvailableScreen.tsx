@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
-const RewardAvailableScreen = ({navigation}) => {
+export default function RewardAvailableScreen({navigation}) {
     return (
         <View style={{
                 flex: 1,
@@ -96,6 +96,4 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'black',
     },
-  })
-
-export default RewardAvailableScreen;
+})

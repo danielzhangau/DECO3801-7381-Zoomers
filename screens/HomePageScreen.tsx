@@ -14,27 +14,27 @@ export default class HomeScreen extends Component {
             { name: 'Jack Xu', miles: 244, profileUrl: 'https://image.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg' },
             { name: 'Jona Chu', miles: 0, profileUrl: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg' },
             { name: 'Leslie Cha', miles: 20, profileUrl: 'https://static.witei.com/static/img/profile_pics/avatar4.png' },
-            { name: 'Edan K Zhao', miles: 69, profileUrl: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' },
+            { name: 'Edan K Zhao', miles: 92, profileUrl: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' },
             { name: 'Eva Hersberg', miles: 101, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
             { name: 'Jonna Oliva', miles: 41, profileUrl: 'https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg' },
-            { name: 'Vivien Chen', miles: 80, profileUrl: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg' },
+            { name: 'Vivien Chen', miles: 95, profileUrl: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg' },
             { name: 'Peter Scalt', miles: 22, profileUrl: 'https://cdn.dribbble.com/users/223408/screenshots/2134810/me-dribbble-size-001-001_1x.png' },
             { name: 'Harry Potter', miles: null, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsSlzi6GEickw2Ft62IdJTfXWsDFrOIbwXhzddXXt4FvsbNGhp' },
-            { name: 'Betty Burger', miles: 25, profileUrl: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg?w=300&h=300' },
+            { name: 'Betty Burger', miles: 25, profileUrl: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58495.jpg' },
             { name: 'Lauren Leonard', miles: 30, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr27ZFBaclzKcxg2FgJh6xi3Z5-9vP_U1DPcB149bYXxlPKqv-' },
         ],
         // friends user list
         friendData: [
-            { name: 'Edan K Zhao', miles: 69, profileUrl: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png' },
+            { name: 'Edan K Zhao', miles: 92, profileUrl: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' },
             { name: 'Eva Hersberg', miles: 101, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
-            { name: 'Jonna Oliva', miles: 41, profileUrl: 'http://conserveindia.org/wp-content/uploads/2017/07/teamMember4.png' },
+            { name: 'Jonna Oliva', miles: 41, profileUrl: 'https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg' },
         ],
         filter: 0,
         userRank: 1,
         // current user
         user: {
             name: 'Edan K Zhao',
-            miles: 69,
+            miles: 92,
         }
     }
     

@@ -15,7 +15,7 @@ const StatisticMapScreen = ({navigation}) => {
           style={{width: 320, height: 300}}
         />
         <Text >{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Signup')}}>
+        <TouchableOpacity onPress = {() => {navigation.navigate('StatisticScreen')}}>
           <View style = {{height: 50, width: 300, backgroundColor: 'white', 
                           alignItems: 'center', justifyContent: 'center', 
                           borderRadius: 40, marginVertical: 10}}>
