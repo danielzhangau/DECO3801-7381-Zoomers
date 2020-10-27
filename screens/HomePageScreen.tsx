@@ -1,65 +1,118 @@
-import React from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { View, Alert, Image, Text } from 'react-native';
+import { ButtonGroup } from 'react-native-elements';
+import Leaderboard from 'react-native-leaderboard';
 
-const HomeScreen = () => {
-    return (
-        <View style={styles.container}>
-            <Text>{"\n"}</Text>
-            <Text style={styles.textBig}>Welcome Back!</Text>
-            <Text style={styles.text}>You've travelled</Text>
-            <Text style={styles.number}>92km</Text>
-            <Text style={styles.text}>this week</Text>
-            <Text style={styles.text}>only</Text>
-            <Text style={styles.number}>3</Text>
-            <Text style={styles.text}>days left</Text>
-            <Text style={styles.text}>to beat Dave</Text>
-            <Text>{"\n"}</Text>
+export default class HomeScreen extends Component {
 
-            <FlatList
-                data={[
-                {key: 'Devin'},
-                {key: 'Dan'},
-                {key: 'Dominic'},
-                {key: 'Jackson'},
-                {key: 'James'},
-                {key: 'Joel'},
-                {key: 'John'},
-                {key: 'Jillian'},
-                {key: 'Jimmy'},
-                {key: 'Julie'},
-                ]}
-                renderItem={({item}) => <Text style={styles.text}>{item.key}</Text>}
-            />
-        </View>
-    )
+    // state, save all the user in our application
+    state = {
+        // global user list
+        globalData: [
+            { name: 'Thor Chen', miles: null, profileUrl: 'https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59094043-stock-illustration-profile-icon-male-avatar.jpg' },
+            { name: 'Dan Zhang', miles: 12, profileUrl: 'https://www.shareicon.net/data/128x128/2016/09/15/829473_man_512x512.png' },
+            { name: 'Jack Xu', miles: 244, profileUrl: 'https://image.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg' },
+            { name: 'Jona Chu', miles: 0, profileUrl: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg' },
+            { name: 'Leslie Cha', miles: 20, profileUrl: 'https://static.witei.com/static/img/profile_pics/avatar4.png' },
+            { name: 'Edan K Zhao', miles: 69, profileUrl: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' },
+            { name: 'Eva Hersberg', miles: 101, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
+            { name: 'Jonna Oliva', miles: 41, profileUrl: 'https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg' },
+            { name: 'Vivien Chen', miles: 80, profileUrl: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg' },
+            { name: 'Peter Scalt', miles: 22, profileUrl: 'https://cdn.dribbble.com/users/223408/screenshots/2134810/me-dribbble-size-001-001_1x.png' },
+            { name: 'Harry Potter', miles: null, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsSlzi6GEickw2Ft62IdJTfXWsDFrOIbwXhzddXXt4FvsbNGhp' },
+            { name: 'Betty Burger', miles: 25, profileUrl: 'https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg?w=300&h=300' },
+            { name: 'Lauren Leonard', miles: 30, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr27ZFBaclzKcxg2FgJh6xi3Z5-9vP_U1DPcB149bYXxlPKqv-' },
+        ],
+        // friends user list
+        friendData: [
+            { name: 'Edan K Zhao', miles: 69, profileUrl: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-braindead-zombie.png' },
+            { name: 'Eva Hersberg', miles: 101, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
+            { name: 'Jonna Oliva', miles: 41, profileUrl: 'http://conserveindia.org/wp-content/uploads/2017/07/teamMember4.png' },
+        ],
+        filter: 0,
+        userRank: 1,
+        // current user
+        user: {
+            name: 'Edan K Zhao',
+            miles: 69,
+        }
+    }
+    
+    alert = (title, body) => {
+        Alert.alert(
+            title, body, [{ text: 'OK', onPress: () => { } },],
+            { cancelable: false }
+        )
+    }
+
+    sort = (data) => {
+        const sorted = data && data.sort((item1, item2) => {
+            return item2.miles - item1.miles;
+        })
+        let userRank = sorted.findIndex((item) => {
+            return item.name === this.state.user.name;
+        })
+        this.setState({ userRank: ++userRank });
+        return sorted;
+    }
+
+    renderHeader() {
+        return (
+            <View
+                style={{ backgroundColor: '#068D3C', padding: 15, paddingTop: 35, alignItems: 'center' }}>
+                <Text style={{ fontSize: 35, color: 'white', fontFamily: 'Roboto-Bold' }}>Leaderboard</Text>
+                <View style={{
+                    flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
+                    marginBottom: 15, marginTop: 20
+                }}>
+                    <Text style={{ color: 'white', fontSize: 25, fontFamily: 'Roboto-Bold', flex: 1, textAlign: 'right', marginRight: 40 }}>
+                        {ordinal_suffix_of(this.state.userRank)}
+                    </Text>
+                    <Image style={{ flex: .66, height: 60, width: 60, borderRadius: 60 / 2 }}
+                        source={{ uri: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' }} />
+                    <Text style={{ color: 'white', fontSize: 25, fontFamily: 'Roboto-Bold', flex: 1, marginLeft: 40 }}>
+                        {this.state.user.miles}km
+                    </Text>
+                </View>
+                <ButtonGroup
+                    onPress={(x) => { this.setState({ filter: x }) }}
+                    selectedIndex={this.state.filter}
+                    buttons={['Global', 'Friends']}
+                    containerStyle={{ height: 30 }} />
+            </View>
+        )
+    }
+
+    render() {
+        const props = {
+            labelBy: 'name',
+            sortBy: 'miles',
+            data: this.state.filter > 0 ? this.state.friendData : this.state.globalData,
+            icon: 'profileUrl',
+            onRowPress: (item, index) => { this.alert(item.name + " clicked", "You've Travelled " + item.miles + " km this week! Only Three days left to beat Jack") },
+            sort: this.sort
+        }
+
+        return (
+            <View style={{ flex: 1, backgroundColor: 'white', }}>
+                {this.renderHeader()}
+                <Leaderboard {...props} />
+            </View>
+        )
+    }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#068D3C',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: 'Roboto',
-    },
-    textBig: {
-        fontFamily: 'Roboto-Bold',
-        fontSize: 40,
-        fontStyle: 'normal',
-        textShadowColor: '#3B3A3A',
-        textShadowOffset: {width: 0, height: 3},
-        textShadowRadius: 4,
-        color: 'white',
-        marginBottom: 20
-    },
-    text: {
-        fontSize: 20,
-        color: 'white'
-    },
-    number: {
-        fontFamily: 'Roboto-Bold',
-        fontSize: 25,
-        color: 'white'
+const ordinal_suffix_of = (i) => {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "st";
     }
-})
-export default HomeScreen;
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    return i + "th";
+}
