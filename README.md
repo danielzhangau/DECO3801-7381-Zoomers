@@ -1,5 +1,7 @@
 # React native app -  GreenMiles
-<div style="text-align:center"><img src="img/green_miles.png" /></div>
+<p align="center">
+  <img src="img/green_miles.png" />
+</p>
 
 We are team named 'We are AWESOME!!!'  
 Team members: Thomas Chen, Bosheng Zhang, Junyi Xie, Eden Ke, Jonathan Lau, Lester Phua
@@ -19,6 +21,38 @@ Expo is a set of tools built around React Native and, while it has many features
 ```shell
 npm install -g expo-cli
 ```
+Once you have fork and clone our repository, run command below to make sure node_module is installed
+```shell
+npm install
+```
+Then, You are good to try our application out
+```shell
+expo start
+```
+
+### What is Green miles looks like:
+**Leaderboard:**
+<p align="center">
+  <img width="250" img src="gif/home.gif" />
+</p>
+
+**Reward System:**
+
+<p align="center">
+  <img width="250" img src="gif/reward.gif" />
+</p>
+
+**Trip:**
+
+<p align="center">
+  <img width="250" img src="gif/trip.gif" />
+</p>
+
+**Database Connection:**
+
+<p align="center">
+  <img width="400" img src="gif/database.gif" />
+</p>
 
 ### What I have learned: 
 1. Design, build and clearly document a significant software solution based on a design brief.
