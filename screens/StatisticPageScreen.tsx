@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
-import { LineChart, StackedBarChart, PieChart } from "react-native-chart-kit";
+import { LineChart, StackedBarChart } from "react-native-chart-kit";
 
 const screenWidth = Dimensions.get("window").width;
 
