@@ -1,5 +1,6 @@
 # React native app -  GreenMiles
-![Test Image 1](img/green_miles.png)  
+<div style="text-align:center"><img src="img/green_miles.png" /></div>
+
 We are team named 'We are AWESOME!!!'  
 Team members: Thomas Chen, Bosheng Zhang, Junyi Xie, Eden Ke, Jonathan Lau, Lester Phua
 
