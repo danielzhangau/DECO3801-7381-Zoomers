@@ -169,7 +169,7 @@ function StatisticNavigator() {
       <StatisticStack.Screen
         name="StatisticMapScreen"
         component={StatisticMapScreen}
-        options={{ headerTitle: 'StatisticMap Page' }}
+        options={{ headerTitle: 'News Page' }}
       />
     </StatisticStack.Navigator>
   );

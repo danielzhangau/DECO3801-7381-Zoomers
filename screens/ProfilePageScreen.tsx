@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, Text, View, Image, Button } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
 
 const ProfileScreen = ({navigation}) => {
     return (
@@ -14,14 +14,25 @@ const ProfileScreen = ({navigation}) => {
             <Text style={styles.text}>Your available travel money</Text>
             <Text style={styles.number}>92km</Text>
 
+            {/* redeem button */}
             <TouchableOpacity onPress = {() => {navigation.navigate('Reward', {screen: 'RewardScreen'})}}>
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                                 alignItems: 'center', justifyContent: 'center', 
-                                borderRadius: 40, marginVertical: 30}}>
+                                borderRadius: 40, marginVertical: 9}}>
                     <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
                                 fontSize: 22}}>REDEEM NOW</Text>
                 </View>
             </TouchableOpacity>
+            {/* link go card button */}
+            <TouchableOpacity onPress = {() => Alert.alert("Under Development")}>
+                <View style = {{height: 50, width: 200, backgroundColor: 'white', 
+                                alignItems: 'center', justifyContent: 'center', 
+                                borderRadius: 40, marginBottom: 9}}>
+                    <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
+                                fontSize: 22}}>LINK GO CARD</Text>
+                </View>
+            </TouchableOpacity>
+            {/* sign out button */}
             <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}}> 
                 <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                                 alignItems: 'center', justifyContent: 'center', 

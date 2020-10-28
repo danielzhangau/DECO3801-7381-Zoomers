@@ -23,6 +23,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "The application will provide users with an incentive to use public transport and allow them to collaborate socially with other commuters and add friends. It will also inform users of the impact they are having on the environment and allow them to redeem gift cards and free ride vouchers with points they earned by using public transport.",
+    "githubUrl": "https://github.com/danielzhangau/DECO3801-7381-Zoomers"
   }
 }
