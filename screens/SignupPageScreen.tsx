@@ -1,9 +1,14 @@
+import { useLinkProps } from '@react-navigation/native';
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground, Alert } from 'react-native';
 import { dbconnect, test2 } from '../db-connection/mydb.js';
+import { ProfileDb } from '../db-connection/profileDb.js';
 // import { addUser } from '../db-connection/database-add.js';
 // import * as database from '../db-connection/database-add.js'; 
 import firebase from '../firebase'
+
+var Check = false;
+var dbconn = new dbconnect();
 class Inputs extends Component<{ value: string }, { }> {
   state = {
     email: '',
@@ -83,20 +88,39 @@ class Inputs extends Component<{ value: string }, { }> {
         <TouchableOpacity onPress = {() => {
           if (this.state.email == '' || this.state.username == '' || this.state.password == '' || this.state.checkpassword == '') {
             alert('please make sure your entered your email, username and password')
-          } else {
-            this.signUp(this.state.email, this.state.password, this.state.checkpassword)
-            firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
-            .then(newUserCredentials=>{firebase.database().ref(`/userProfile/${newUserCredentials.user.uid}/email`)
-            .set(this.state.email)});
-          }
+          } 
           // database.addUser(this.state.username, this.state.password)
-          var dbconn = new dbconnect(this.props);
-          dbconn.name = this.state.username;
-          dbconn.password = this.state.password;
-          dbconn.email = this.state.email;
-          dbconn.onPostUser();
-          dbconn.onGetUsers();
-          test2(2);
+          try{
+            dbconn.name = this.state.username;
+            dbconn.onGetUser();
+            var data = dbconn.getname();
+            console.log(data);
+            console.log(data.length);
+            if(data.length == 0){
+              dbconn.password = this.state.password;
+              dbconn.email = this.state.email;
+              dbconn.onPostUser();
+              Check = true;
+              this.signUp(this.state.email, this.state.password, this.state.checkpassword);
+              try{
+                dbconn.onGetUser();
+                data = dbconn.getname();
+                var profileDb = new ProfileDb(this.props);
+                profileDb.uid = data[0].id;
+                profileDb.name = this.state.username;
+                profileDb.travelled = 0;
+                profileDb.travellmoney = 0;
+                profileDb.onPostUserProfile();
+              } catch(error){
+                console.log(error);
+              }
+            } else{
+              alert("User exits!");
+              dbconn.name = null;
+            }
+          }catch(error){
+            console.log(error);
+          }
           }}>
           <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                         alignItems: 'center', justifyContent: 'center', 
@@ -123,7 +147,11 @@ const SignupScreen = ({navigation}) => {
         
         <Text >{"\n"}{"\n"}</Text>
         <Inputs />
-        <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'LoginScreen' })}}>
+        <TouchableOpacity onPress = {() => {
+            if(Check == true){
+              navigation.navigate('Home', { screen: 'LoginScreen' });
+            }
+          }}>
             <View style = {{height: 50, width: 200, backgroundColor: 'white', 
                             alignItems: 'center', justifyContent: 'center', 
                             borderRadius: 40, marginVertical: 30}}>

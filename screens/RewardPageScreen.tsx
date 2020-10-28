@@ -1,7 +1,25 @@
+import { useLinkProps } from '@react-navigation/native';
 import React from 'react';
 import { Image, ImageBackground, ScrollView, StyleSheet, View, TouchableOpacity, Text, TouchableHighlight } from 'react-native';
+import { ItemDb } from '../db-connection/itemDb';
 
+var data:[];
+var itemid, itemType, itemName, imagePath;
 const RewardScreen = ({navigation}) => {
+    try{
+        var itemDb = new ItemDb(useLinkProps);
+        itemDb.onGetItem();
+        data = itemDb.getData();
+        data.forEach(element => {
+            itemid = element.itemId;
+            itemType = element.itemType;
+            itemName = element.itemName;
+            imagePath = element.imagePath;       
+        });
+    }catch(error){
+        console.log(error);
+        console.log("server is close!")
+    }
     return (
       <ScrollView>
         <View style={{

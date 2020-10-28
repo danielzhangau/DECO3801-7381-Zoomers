@@ -1,8 +1,17 @@
+import { useLinkProps } from '@react-navigation/native';
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Text, View, Image, Button } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
+import { ProfileDb } from '../db-connection/profileDb';
 
 const ProfileScreen = ({navigation}) => {
+    try{
+        var profileDb = new ProfileDb(useLinkProps);
+        profileDb.onGetUserProfile();
+        var data = profileDb.getData();
+    }catch(error){
+        console.log(error);
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Good day! HelloWorld</Text>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export var data;
-export class dbconnect extends Component {
+export class ProfileDb extends Component {
   constructor(props){
     super(props)
     // this.state = {
@@ -10,43 +10,24 @@ export class dbconnect extends Component {
     // }
     this.uid = null;
     this.name = null;
-    this.email = null;
-    this.password = null;
+    this.travelled = null;
+    this.travelmoney = null;
   }
-  getname(){
+  getData(){
     if(data != null){
+      console.log("data111 = "+ data[0].id);
       return data;
     }
-    return null;
-  }
-  onGetUsers () {
-    console.log("here is get users");
-   fetch('http://localhost:19006/users',{
-     method: 'GET'
-   }).then((response) => {
-     return response.json();
-   }).then((jsonData) => {
-        // this.setState({
-        //  apiData: jsonData,
-        // })
-        data = jsonData;
-        console.log("data = "+data);
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
-      this.uid = null;
   }
 
-    onPostUser = () => {
-     console.log("here is post users");
-     fetch('http://localhost:19006/users',{
+    onPostUserProfile = () => {
+     fetch('http://localhost:19007/profile',{
        method: 'POST',
        headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
        },
-       body: JSON.stringify({ name: this.name, email: this.email, password: this.password })
+       body: JSON.stringify({ uid: this.uid, name: this.name, travelled: this.travelled, travelmoney: this.travelmoney })
      }).then((response) => {
        console.log("i am here!!");
        return response.json();
@@ -65,9 +46,8 @@ export class dbconnect extends Component {
         this.password = null;
     }
 
-  onGetUser = () => {
-    
-   fetch('http://localhost:19006/users/'+ this.name,{
+  onGetUserProfile = () => {
+   fetch('http://localhost:19007/profile/'+ this.uid,{
      method: 'GET'
    }).then((response) => {
      return response.json();
@@ -76,8 +56,6 @@ export class dbconnect extends Component {
           apiData : jsonData
         })
         data = jsonData;
-        console.log("i am here");
-        console.log(jsonData);
       })
       .catch((error) => {
         console.log(error.message);
@@ -86,8 +64,8 @@ export class dbconnect extends Component {
       return data;
   }
 
-    onDeleteUser = () => {
-     fetch('http://localhost:19006/users/'+ this.uid,{
+    onDeleteUserProfile = () => {
+     fetch('http://localhost:19007/profile/'+ this.uid,{
        method: 'DELETE'
      }).then((response) => {
        console.log(response.rows);
@@ -97,14 +75,14 @@ export class dbconnect extends Component {
         this.uid = null;
     }
 
-  onPutUser = () => {
-     fetch('http://localhost:19006/users',{
+  onPutUserProfile = () => {
+     fetch('http://localhost:19007/profile',{
        method: 'PUT',
        headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
        },
-       body: JSON.stringify({ name: this.name, email: this.email, password: this.password, id: this.uid })
+       body: JSON.stringify({ travelled: this.travelled, travelmoney: this.travelmoney, id: this.uid })
      }).then((response) => {
        return response.json();
      }).catch((error) => {
@@ -116,6 +94,4 @@ export class dbconnect extends Component {
         this.password = null;
   }
 };
-export function test2(i) {
-    console.log(i + 5);
-}
+

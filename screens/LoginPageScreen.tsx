@@ -45,12 +45,27 @@ class Inputs extends Component {
                   dbconn.name = this.state.username;
                   dbconn.onGetUser();
                   dbconn.onGetUser();
-                  var data = dbconn.getname();
-                  var psw = data[0].password;
-                  console.log("data =" + data[0].password);
-                  if(psw == this.state.password){
-                    this.login(this.state.username, this.state.password);
-                    Check = true;
+                  try{
+                    var data = dbconn.getname();
+                    if(data == null){
+                      alert("user not exits!");
+                      return;
+                    } else{
+                      console.log(data);
+                        var psw = data[0].password;
+                    // console.log("data =" + data[0].password);
+                        if(psw == this.state.password){
+                          this.login(this.state.username, this.state.password);
+                          Check = true;
+                        }else{
+                          alert("username or password not corret.")
+                        }
+                    }
+                  }catch(error){
+                    console.log(error);
+                    alert("user not exits!");
+                    Check = false;
+                    data = null;
                   }
                 }
                 }}>

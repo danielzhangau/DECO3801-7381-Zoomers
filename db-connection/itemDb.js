@@ -1,52 +1,33 @@
 import React, { Component } from 'react';
 
 export var data;
-export class dbconnect extends Component {
+export class ItemDb extends Component {
   constructor(props){
     super(props)
     // this.state = {
     //     apiData: [],
     //     naData: []
     // }
-    this.uid = null;
-    this.name = null;
-    this.email = null;
-    this.password = null;
+    this.itemId = null;
+    this.itemType = null;
+    this.itemName = null;
+    this.imagePath = null;
   }
-  getname(){
+  getData(){
     if(data != null){
+      console.log("data111 = "+ data[0].itemId);
       return data;
     }
-    return null;
-  }
-  onGetUsers () {
-    console.log("here is get users");
-   fetch('http://localhost:19006/users',{
-     method: 'GET'
-   }).then((response) => {
-     return response.json();
-   }).then((jsonData) => {
-        // this.setState({
-        //  apiData: jsonData,
-        // })
-        data = jsonData;
-        console.log("data = "+data);
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
-      this.uid = null;
   }
 
-    onPostUser = () => {
-     console.log("here is post users");
-     fetch('http://localhost:19006/users',{
+    onPostItem = () => {
+     fetch('http://localhost:19006/Reward',{
        method: 'POST',
        headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
        },
-       body: JSON.stringify({ name: this.name, email: this.email, password: this.password })
+       body: JSON.stringify({ itemId: this.itemId, name: this.itemType, travelled: this.itemName, travelmoney: this.imagePath })
      }).then((response) => {
        console.log("i am here!!");
        return response.json();
@@ -59,15 +40,14 @@ export class dbconnect extends Component {
         .catch((error) => {
           console.warn(error.message);
         });
-        this.uid = null;
-        this.name = null;
+        this.itemId = null;
+        this.itemType = null;
         this.email = null;
         this.password = null;
     }
 
-  onGetUser = () => {
-    
-   fetch('http://localhost:19006/users/'+ this.name,{
+  onGetItem = () => {
+   fetch('http://localhost:19006/Reward/'+ this.itemId,{
      method: 'GET'
    }).then((response) => {
      return response.json();
@@ -76,46 +56,42 @@ export class dbconnect extends Component {
           apiData : jsonData
         })
         data = jsonData;
-        console.log("i am here");
-        console.log(jsonData);
       })
       .catch((error) => {
         console.log(error.message);
       });
-      this.uid = null;
+      this.itemId = null;
       return data;
   }
 
-    onDeleteUser = () => {
-     fetch('http://localhost:19006/users/'+ this.uid,{
+    onDeleteItem = () => {
+     fetch('http://localhost:19006/Reward/'+ this.itemId,{
        method: 'DELETE'
      }).then((response) => {
        console.log(response.rows);
      }).catch((error) => {
           console.warn(error);
         });
-        this.uid = null;
+        this.itemId = null;
     }
 
-  onPutUser = () => {
-     fetch('http://localhost:19006/users',{
+  onPutItem = () => {
+     fetch('http://localhost:19006/Reward',{
        method: 'PUT',
        headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
        },
-       body: JSON.stringify({ name: this.name, email: this.email, password: this.password, id: this.uid })
+       body: JSON.stringify({ travelled: this.itemName, travelmoney: this.imagePath, id: this.itemId })
      }).then((response) => {
        return response.json();
      }).catch((error) => {
           console.warn(error);
         });
-        this.uid = null;
-        this.name = null;
+        this.itemId = null;
+        this.itemType = null;
         this.email = null;
         this.password = null;
   }
 };
-export function test2(i) {
-    console.log(i + 5);
-}
+

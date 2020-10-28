@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 declare class dbconnect extends Component{
+    naData:[];
     constructor(props){
         var state ={
             apiData:[],
