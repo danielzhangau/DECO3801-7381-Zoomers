@@ -1,15 +1,25 @@
-# DECO3801/7381
 # React native app -  GreenMiles
-We are team named 'We are AWESOME!!!'
-
+![Test Image 1](img/green_miles.png)  
+We are team named 'We are AWESOME!!!'  
 Team members: Thomas Chen, Bosheng Zhang, Junyi Xie, Eden Ke, Jonathan Lau, Lester Phua
 
-Problem Statement:
+# [Test our application](https://expo.io/@danielzhang/projects/GreenMilesProject) :point_left::point_left::point_left:
+**We appreciate any feedback!!** :pray::pray::pray:
+
+### Problem Statement:
 Inner-city congestion remains a growing problem in today’s technological society and we need a cost-effective, ethical, and social solution.
+### What is Green Miles? 
+**Green Miles** is an application that allows its users to track their carbon footprint. As the world progresses into a technologically advanced era, there is an increased awareness in global warming and greenhouse gas emissions. 
+ 
+Therefore, the aim of Green Miles is to provide an incentive to use public transport and allow our users to collaborate socially with other commuters. It will also inform the users of the impact they are having on the environment and allows them to redeem gift cards with points they earned by using public transport. 
 
-The application will provide users with an incentive to use public transport and allow them to collaborate socially with other commuters and add friends1. It will also inform users of the impact they are having on the environment2 and allow them to redeem gift cards and free ride vouchers with points they earned by using public transport3.
+### Setting up the development environment
+Expo is a set of tools built around React Native and, while it has many features, the most relevant feature for us right now is that it can get you writing a React Native app within minutes. You will only need a recent version of Node.js and a phone or emulator. 
+```shell
+npm install -g expo-cli
+```
 
-## What I have learned: 
+### What I have learned: 
 1. Design, build and clearly document a significant software solution based on a design brief.
 2. Apply previous experience and skills in multimedia design and software development to deliver a complete and polished system that meets your client's requirements within a pre-determined deadline.
 3. Investigate and overcome challenges associated with implementing new designs and technologies.
