@@ -5,16 +5,13 @@ const StatisticTreeScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <Image
-          source={require('./../img/tree.png')}
+          source={require('./../assets/images/tree.png')}
           style={{width: 60, height: 70}}
         />
         <Text>{"\n"}</Text>
         <Text style={styles.textBig}>1</Text>
         <Text style={styles.textBig}>trees saved</Text>
         <Text>{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticMapScreen' })}}>
-            <Text style = {styles.textUnderline}>How world change?</Text>
-        </TouchableOpacity>
       </View>
     );
 };

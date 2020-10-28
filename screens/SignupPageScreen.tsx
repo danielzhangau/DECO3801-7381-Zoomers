@@ -11,6 +11,8 @@ class Inputs extends Component<{ value: string }, { }> {
     error: '',
     loading: false
   }
+  
+  // handle textinput to change state
   handleEmail = (text) => {
     this.setState({ email: text })
   }
@@ -108,9 +110,9 @@ class Inputs extends Component<{ value: string }, { }> {
 const SignupScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('./../img/small_green2.jpg')} style={styles.backgroundImage}>
+      <ImageBackground blurRadius={20} source={require('./../assets/images/small_green2.jpg')} style={styles.backgroundImage}>
         <Image
-          source={require('./../img/green_miles.png')}
+          source={require('./../assets/images/green_miles.png')}
           style={{
             width: 200, height: 100, backgroundColor: 'white', borderRadius: 40,
             alignItems: 'center', justifyContent: 'center', marginBottom: 20, marginTop: 10

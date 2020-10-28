@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, Dimensions, ImageBackground } from 'react-native';
 import { LineChart, StackedBarChart } from "react-native-chart-kit";
 
 const screenWidth = Dimensions.get("window").width;
@@ -17,9 +17,9 @@ const data = {
 };
 
 const chartConfig = {
-  backgroundGradientFrom: "#9933FF",
-  backgroundGradientFromOpacity: 0.3,
-  backgroundGradientTo: "#3333FF",
+  backgroundGradientFrom: "#b366ff",
+  backgroundGradientFromOpacity: 0.4,
+  backgroundGradientTo: "#6666ff",
   backgroundGradientToOpacity: 0.9,
   color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   strokeWidth: 2, // optional, default 3
@@ -39,52 +39,62 @@ const typeData = {
 
 export default function StatisticScreen({navigation}) {
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <Image
-            source={require('./../img/green_miles.png')}
-            style={{width: 200, height: 100, backgroundColor: 'white', borderRadius: 40, 
-                    alignItems: 'center', justifyContent: 'center', marginBottom: 20, marginTop: 30}}
-          />
-          <Text style={styles.title}>Public Transport Usage</Text>
+      <ImageBackground blurRadius={40} source={require('./../assets/images/tree_of_life.jpg')} style={{flex: 1}}>
+        <ScrollView>
+          <View style={styles.container}>
+            <Image
+              source={require('./../assets/images/green_miles.png')}
+              style={{width: 200, height: 100, backgroundColor: 'white', borderRadius: 40, 
+                      alignItems: 'center', justifyContent: 'center', marginBottom: 20, marginTop: 30}}
+            />
+            <Text style={styles.title}>Public Transport Usage</Text>
 
-          {/* chart start after this title */}
-          <Text style={styles.barTitle}>Mile Record over this week</Text>
-          <LineChart
-            data={data}
-            width={screenWidth}
-            height={220}
-            chartConfig={chartConfig}
-          />
-          <Text >{"\n"}</Text>
+            {/* chart start after this title */}
+            <Text style={styles.barTitle}>Mile Record over this week</Text>
+            <LineChart
+              data={data}
+              width={screenWidth}
+              height={220}
+              chartConfig={chartConfig}
+            />
+            <Text >{"\n"}</Text>
 
-          <Text style={styles.barTitle}>Bus and Train Usage</Text>
-          <StackedBarChart
-            data={typeData}
-            width={screenWidth}
-            height={430}
-            chartConfig={chartConfig}
-          />
-          <Text >{"\n"}</Text>
-          
-          <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticTreeScreen' })}}>
-            <View style = {{height: 50, width: 300, backgroundColor: 'white', 
-                            alignItems: 'center', justifyContent: 'center', 
-                            borderRadius: 40, marginVertical: 10}}>
-                <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                            fontSize: 19}}>See how much tree you saved</Text>
-            </View>
-          </TouchableOpacity>
-          <Text >{"\n"}</Text>
-        </View>
-      </ScrollView>
+            <Text style={styles.barTitle}>Bus and Train Usage</Text>
+            <StackedBarChart
+              data={typeData}
+              width={screenWidth}
+              height={430}
+              chartConfig={chartConfig}
+            />
+            <Text >{"\n"}</Text>
+            
+            <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticTreeScreen' })}}>
+              <View style = {{height: 50, width: 300, backgroundColor: 'white', 
+                              alignItems: 'center', justifyContent: 'center', 
+                              borderRadius: 40, marginVertical: 10}}>
+                  <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
+                              fontSize: 19}}>See how much tree you saved</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress = {() => {navigation.navigate('Statistic', { screen: 'StatisticNewsScreen' })}}>
+              <View style = {{height: 50, width: 300, backgroundColor: 'white', 
+                              alignItems: 'center', justifyContent: 'center', 
+                              borderRadius: 40, marginVertical: 10}}>
+                  <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
+                              fontSize: 19}}>How world change?</Text>
+              </View>
+            </TouchableOpacity>
+            <Text >{"\n"}</Text>
+          </View>
+        </ScrollView>
+      </ImageBackground>
     );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#009900',
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -7,6 +7,7 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
 export default function App() {
+  // pre-load images and font
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 

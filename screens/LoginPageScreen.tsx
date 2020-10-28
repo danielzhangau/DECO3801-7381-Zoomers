@@ -57,12 +57,14 @@ class Inputs extends Component {
 const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('./../img/small_green2.jpg')} style={styles.backgroundImage}>
+      <ImageBackground blurRadius={20} source={require('./../assets/images/small_green2.jpg')} style={styles.backgroundImage}>
         <Image
-            source={require('./../img/green_miles.png')}
+            source={require('./../assets/images/green_miles.png')}
             style={{width: 200, height: 100, backgroundColor: 'white', borderRadius: 40, 
             alignItems: 'center', justifyContent: 'center', marginBottom: 60, marginTop: 20}}
         />
+        
+        {/* we use input to class to handle all textinput */}
         <Inputs />
         <Text >{"\n"}</Text>
         <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'HomeScreen' })}}>

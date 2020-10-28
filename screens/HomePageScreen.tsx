@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Alert, Image, Text } from 'react-native';
+import { View, Alert, Image, Text, ImageBackground } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
 import Leaderboard from 'react-native-leaderboard';
 
@@ -13,7 +13,7 @@ export default class HomeScreen extends Component {
             { name: 'Dan Zhang', miles: 12, profileUrl: 'https://www.shareicon.net/data/128x128/2016/09/15/829473_man_512x512.png' },
             { name: 'Jack Xu', miles: 244, profileUrl: 'https://image.freepik.com/free-vector/businessman-profile-cartoon_18591-58479.jpg' },
             { name: 'Jona Chu', miles: 0, profileUrl: 'https://image.freepik.com/free-vector/man-profile-cartoon_18591-58482.jpg' },
-            { name: 'Leslie Cha', miles: 20, profileUrl: 'https://static.witei.com/static/img/profile_pics/avatar4.png' },
+            { name: 'Leslie Cha', miles: 20, profileUrl: 'https://static.witei.com/static/assets/images/profile_pics/avatar4.png' },
             { name: 'Edan K Zhao', miles: 92, profileUrl: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' },
             { name: 'Eva Hersberg', miles: 101, profileUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShPis8NLdplTV1AJx40z-KS8zdgaSPaCfNINLtQ-ENdPvrtMWz' },
             { name: 'Jonna Oliva', miles: 41, profileUrl: 'https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg' },
@@ -57,29 +57,31 @@ export default class HomeScreen extends Component {
     }
 
     renderHeader() {
-        return (
-            <View
-                style={{ backgroundColor: '#068D3C', padding: 15, paddingTop: 35, alignItems: 'center' }}>
-                <Text style={{ fontSize: 35, color: 'white', fontFamily: 'Roboto-Bold' }}>Leaderboard</Text>
-                <View style={{
-                    flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
-                    marginBottom: 15, marginTop: 20
-                }}>
-                    <Text style={{ color: 'white', fontSize: 25, fontFamily: 'Roboto-Bold', flex: 1, textAlign: 'right', marginRight: 40 }}>
-                        {ordinal_suffix_of(this.state.userRank)}
-                    </Text>
-                    <Image style={{ flex: .66, height: 60, width: 60, borderRadius: 60 / 2 }}
-                        source={{ uri: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' }} />
-                    <Text style={{ color: 'white', fontSize: 25, fontFamily: 'Roboto-Bold', flex: 1, marginLeft: 40 }}>
-                        {this.state.user.miles}km
-                    </Text>
+        return ( 
+            <ImageBackground blurRadius={20} source={require('./../assets/images/tree_of_life.jpg')} style={{}}>
+                <View
+                    style={{ padding: 15, paddingTop: 35, alignItems: 'center' }}>
+                    <Text style={{ fontSize: 35, color: 'white', fontFamily: 'Roboto-Bold' }}>Leaderboard</Text>
+                    <View style={{
+                        flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
+                        marginBottom: 15, marginTop: 20
+                    }}>
+                        <Text style={{ color: 'white', fontSize: 25, fontFamily: 'Roboto-Bold', flex: 1, textAlign: 'right', marginRight: 40 }}>
+                            {ordinal_suffix_of(this.state.userRank)}
+                        </Text>
+                        <Image style={{ flex: .66, height: 60, width: 60, borderRadius: 60 / 2 }}
+                            source={{ uri: 'https://image.freepik.com/free-vector/woman-profile-cartoon_18591-58480.jpg' }} />
+                        <Text style={{ color: 'white', fontSize: 25, fontFamily: 'Roboto-Bold', flex: 1, marginLeft: 40 }}>
+                            {this.state.user.miles}km
+                        </Text>
+                    </View>
+                    <ButtonGroup
+                        onPress={(x) => { this.setState({ filter: x }) }}
+                        selectedIndex={this.state.filter}
+                        buttons={['Global', 'Friends']}
+                        containerStyle={{ height: 30 }} />
                 </View>
-                <ButtonGroup
-                    onPress={(x) => { this.setState({ filter: x }) }}
-                    selectedIndex={this.state.filter}
-                    buttons={['Global', 'Friends']}
-                    containerStyle={{ height: 30 }} />
-            </View>
+            </ImageBackground>
         )
     }
 

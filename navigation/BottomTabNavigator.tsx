@@ -14,7 +14,7 @@ import RewardScreen from '../screens/RewardPageScreen';
 import RewardAvailableScreen from '../screens/RewardAvailableScreen';
 import StatisticScreen from '../screens/StatisticPageScreen';
 import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
-import StatisticMapScreen from '../screens/StatisticMapPageScreen';
+import StatisticNewsScreen from '../screens/StatisticMapPageScreen';
 import ProfileScreen from '../screens/ProfilePageScreen';
 import { BottomTabParamList, HomeParamList, TripParamList, RewardParamList, StatisticParamList, ProfileParamList} from '../types';
 
@@ -23,7 +23,7 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-
+  
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
@@ -77,6 +77,7 @@ function TabBarIcon(props: { name: string; color: string }) {
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const HomeStack = createStackNavigator<HomeParamList>();
 
+// each navigator means they are under each icon in the buttom tab bar
 function HomeNavigator() {
   return (
     <HomeStack.Navigator>
@@ -167,8 +168,8 @@ function StatisticNavigator() {
         options={{ headerTitle: 'StatisticTree Page' }}
       />
       <StatisticStack.Screen
-        name="StatisticMapScreen"
-        component={StatisticMapScreen}
+        name="StatisticNewsScreen"
+        component={StatisticNewsScreen}
         options={{ headerTitle: 'News Page' }}
       />
     </StatisticStack.Navigator>
