@@ -1,0 +1,11 @@
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (1, '1', '1', '1');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (3, 'james', '123', 'james@126.com');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (4, '112222', '22222', '1222');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (5, 'qqq', 'qqq', '123@123234.com');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (6, 'as', '1212', 'asas');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (7, 'kk', '123', 'eden@126.com');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (8, 'ssss', 'ssss', 'ssss');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (9, 'ffff', 'f', 'ffff');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (11, 'jack', '1234', 'jack@qqq.com');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (15, 'marry', '123', '22@qqq.com');
+INSERT INTO `user`(`id`, `name`, `password`, `email`) VALUES (16, 'marry2', '123', 'mary@qqq.com');
