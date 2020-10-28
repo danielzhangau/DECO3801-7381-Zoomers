@@ -1,0 +1,11 @@
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (1, '1', 215, 92);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (3, 'james', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (4, '112222', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (5, 'qqq', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (6, 'as', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (7, 'kk', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (8, 'ssss', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (9, 'ffff', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (11, 'jack', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (15, 'marry', 0, 0);
+INSERT INTO `profile`(`Uid`, `name`, `travelled`, `travelmoney`) VALUES (16, 'marry2', 0, 0);
