@@ -4,24 +4,24 @@ const mysql = require('mysql');
 
 
 const connection = mysql.createPool({
-    host : 'localhost',
-    user : 'root',
-    password : '123',
-    database : 'greenmiles'
+    host: 'localhost',
+    user: 'root',
+    password: '123',
+    database: 'greenmiles'
 });
 
 const app = express();
-app.use(bodyParser.json({type: 'application/json'}));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json({ type: 'application/json' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/users', function(req,res){
-    connection.getConnection(function(err, connection){
-        if(err){
+app.get('/users', function (req, res) {
+    connection.getConnection(function (err, connection) {
+        if (err) {
             console.log("[error] - " + err.message);
         }
         // res.send(data);
         connection.query('SELECT * FROM users', function (error, results, fields) {
-            if (error){
+            if (error) {
                 console.log('[SELECT ERROR] -', err.message);
                 return;
             };
@@ -32,13 +32,13 @@ app.get('/users', function(req,res){
     });
 });
 
-app.post('/users',function(req,res){
-    connection.getConnection(function(err,connection){
-        if(err){
+app.post('/users', function (req, res) {
+    connection.getConnection(function (err, connection) {
+        if (err) {
             console.log("[error] - " + err.message);
         }
-        connection.query('INSERT INTO users SET ?',req.body,function(error,rows,fields){
-            if(!!error) console.log(error.message);
+        connection.query('INSERT INTO users SET ?', req.body, function (error, rows, fields) {
+            if (!!error) console.log(error.message);
             else {
                 console.log(req.body);
                 console.log(rows);
@@ -48,9 +48,9 @@ app.post('/users',function(req,res){
     })
 });
 
-app.get('/users/:id',function(req,res){
-    connection.query('SELECT * FROM users WHERE id=?',req.params.id,function(error,rows,fields){
-        if(!!error) console.log('error');
+app.get('/users/:id', function (req, res) {
+    connection.query('SELECT * FROM users WHERE id=?', req.params.id, function (error, rows, fields) {
+        if (!!error) console.log('error');
         else {
             console.log(rows);
             res.send(JSON.stringify(rows));
@@ -58,9 +58,9 @@ app.get('/users/:id',function(req,res){
     })
 });
 
-app.delete('/users/:id',function(req,res){
-    connection.query('DELETE FROM users WHERE id=?',req.params.id,function(error,rows,fields){
-        if(!!error) console.log('error');
+app.delete('/users/:id', function (req, res) {
+    connection.query('DELETE FROM users WHERE id=?', req.params.id, function (error, rows, fields) {
+        if (!!error) console.log('error');
         else {
             console.log(rows);
             res.end('deleted successfully');
@@ -68,17 +68,17 @@ app.delete('/users/:id',function(req,res){
     })
 });
 
-app.put('/users',function(req,res){
+app.put('/users', function (req, res) {
     connection.query('UPDATE users SET name=?,email=?,password=? WHERE id=?',
-    [req.body.name,req.body.email,req.body.password,req.body.id],function(error,rows,fields){
-        if(!!error) console.log('error');
-        else {
-            console.log(req.body)
-            console.log(rows);
-            res.send(JSON.stringify(rows));
-        }
-    })
+        [req.body.name, req.body.email, req.body.password, req.body.id], function (error, rows, fields) {
+            if (!!error) console.log('error');
+            else {
+                console.log(req.body)
+                console.log(rows);
+                res.send(JSON.stringify(rows));
+            }
+        })
 })
-app.listen(19006, ()=>{
+app.listen(19006, () => {
     console.log('server start');
 });

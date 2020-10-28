@@ -17,72 +17,86 @@ class Inputs extends Component {
   }
   render() {
     return (
-        <View style = {styles.container}>
-            <TextInput
-                style={styles.textInput}
-                underlineColorAndroid = "transparent"
-                placeholder="Your username"
-                autoCapitalize = "none"
-                placeholderTextColor='#787878'
-                onChangeText = {this.handleUsername}
-            />
-            <TextInput
-                style={styles.textInput}
-                underlineColorAndroid = "transparent"
-                placeholder="Your password"
-                placeholderTextColor='#787878'
-                autoCapitalize = "none"
-                onChangeText = {this.handlePassword}
-                secureTextEntry={true}
-            />
-            <TouchableOpacity onPress = {() => {
-                if (this.state.username == '' || this.state.password == '') {
-                    alert('please make sure your entered your username and password')
-                } else {
-                    this.login(this.state.username, this.state.password)
-                }
-                }}>
-                <View style = {{height: 50, width: 200, backgroundColor: 'white', 
-                                alignItems: 'center', justifyContent: 'center', 
-                                borderRadius: 40, marginBottom: 10}}>
-                    <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                                fontSize: 22}}>Check Input</Text>
-                </View>
-            </TouchableOpacity>
-        </View>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.textInput}
+          underlineColorAndroid="transparent"
+          placeholder="Your username"
+          autoCapitalize="none"
+          placeholderTextColor='#787878'
+          onChangeText={this.handleUsername}
+        />
+        <TextInput
+          style={styles.textInput}
+          underlineColorAndroid="transparent"
+          placeholder="Your password"
+          placeholderTextColor='#787878'
+          autoCapitalize="none"
+          onChangeText={this.handlePassword}
+          secureTextEntry={true}
+        />
+        <TouchableOpacity onPress={() => {
+          if (this.state.username == '' || this.state.password == '') {
+            alert('please make sure your entered your username and password')
+          } else {
+            this.login(this.state.username, this.state.password)
+          }
+        }}>
+          <View style={{
+            height: 50, width: 200, backgroundColor: 'white',
+            alignItems: 'center', justifyContent: 'center',
+            borderRadius: 40, marginBottom: 10
+          }}>
+            <Text style={{
+              color: '#30BB4C', fontFamily: 'Roboto-Bold',
+              fontSize: 22
+            }}>Check Input</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     )
   }
 }
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground blurRadius={20} source={require('./../assets/images/small_green2.jpg')} style={styles.backgroundImage}>
         <Image
-            source={require('./../assets/images/green_miles.png')}
-            style={{width: 200, height: 100, backgroundColor: 'white', borderRadius: 40, 
-            alignItems: 'center', justifyContent: 'center', marginBottom: 60, marginTop: 20}}
+          source={require('./../assets/images/green_miles.png')}
+          style={{
+            width: 200, height: 100, backgroundColor: 'white', borderRadius: 40,
+            alignItems: 'center', justifyContent: 'center', marginBottom: 60, marginTop: 20
+          }}
         />
-        
+
         {/* we use input to class to handle all textinput */}
         <Inputs />
         <Text >{"\n"}</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'HomeScreen' })}}>
-            <View style = {{height: 50, width: 200, backgroundColor: 'white', 
-                            alignItems: 'center', justifyContent: 'center', 
-                            borderRadius: 40, marginVertical: 10}}>
-                <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                            fontSize: 22}}>LOG IN</Text>
-            </View>
+        <TouchableOpacity onPress={() => { navigation.navigate('Home', { screen: 'HomeScreen' }) }}>
+          <View style={{
+            height: 50, width: 200, backgroundColor: 'white',
+            alignItems: 'center', justifyContent: 'center',
+            borderRadius: 40, marginVertical: 10
+          }}>
+            <Text style={{
+              color: '#30BB4C', fontFamily: 'Roboto-Bold',
+              fontSize: 22
+            }}>LOG IN</Text>
+          </View>
         </TouchableOpacity>
         <Text style={styles.text}>New to here?</Text>
-        <TouchableOpacity onPress = {() => {navigation.navigate('Home', { screen: 'SignupScreen' })}}>
-            <View style = {{height: 50, width: 200, backgroundColor: 'white', 
-                            alignItems: 'center', justifyContent: 'center', 
-                            borderRadius: 40, marginVertical: 10}}>
-                <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                            fontSize: 22}}>SIGN UP</Text>
-            </View>
+        <TouchableOpacity onPress={() => { navigation.navigate('Home', { screen: 'SignupScreen' }) }}>
+          <View style={{
+            height: 50, width: 200, backgroundColor: 'white',
+            alignItems: 'center', justifyContent: 'center',
+            borderRadius: 40, marginVertical: 10
+          }}>
+            <Text style={{
+              color: '#30BB4C', fontFamily: 'Roboto-Bold',
+              fontSize: 22
+            }}>SIGN UP</Text>
+          </View>
         </TouchableOpacity>
         <Text >{"\n"}</Text>
         <Text style={styles.textForget}>Forget your username?</Text>
@@ -103,7 +117,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: "cover",
-    alignItems: 'center', 
+    alignItems: 'center',
     width: '100%',
   },
   text: {
@@ -121,7 +135,7 @@ const styles = StyleSheet.create({
     color: '#000000',
     marginBottom: 35,
     paddingLeft: 10,
-  }, 
+  },
   textForget: {
     fontSize: 15,
     color: 'white',

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
 import { Dbconnect, test2 } from '../db-connection/mydb.js';
 
-class Inputs extends Component<{ value: string }, { }> {
+class Inputs extends Component<{ value: string }, {}> {
   state = {
     email: '',
     username: '',
@@ -11,7 +11,7 @@ class Inputs extends Component<{ value: string }, { }> {
     error: '',
     loading: false
   }
-  
+
   // handle textinput to change state
   handleEmail = (text) => {
     this.setState({ email: text })
@@ -38,7 +38,7 @@ class Inputs extends Component<{ value: string }, { }> {
         {/* <script src="db-connection/db.js"></script> */}
         <TextInput
           style={styles.textInput}
-          underlineColorAndroid = "transparent"
+          underlineColorAndroid="transparent"
           placeholder="Email"
           autoCapitalize="none"
           placeholderTextColor='#787878'
@@ -53,7 +53,7 @@ class Inputs extends Component<{ value: string }, { }> {
         />
         <TextInput
           style={styles.textInput}
-          underlineColorAndroid = "transparent"
+          underlineColorAndroid="transparent"
           placeholder="Given name as your username"
           autoCapitalize="none"
           placeholderTextColor='#787878'
@@ -93,13 +93,17 @@ class Inputs extends Component<{ value: string }, { }> {
             dbconn.onGetUsers();
           }
           test2(2);
-          }}>
+        }}>
 
-          <View style = {{height: 50, width: 200, backgroundColor: 'white', 
-                        alignItems: 'center', justifyContent: 'center', 
-                        borderRadius: 40, marginVertical: 30}}>
-            <Text style = {{color: '#30BB4C', fontFamily: 'Roboto-Bold',
-                        fontSize: 22}}>Check Input</Text>
+          <View style={{
+            height: 50, width: 200, backgroundColor: 'white',
+            alignItems: 'center', justifyContent: 'center',
+            borderRadius: 40, marginVertical: 30
+          }}>
+            <Text style={{
+              color: '#30BB4C', fontFamily: 'Roboto-Bold',
+              fontSize: 22
+            }}>Check Input</Text>
           </View>
         </TouchableOpacity>
       </View>

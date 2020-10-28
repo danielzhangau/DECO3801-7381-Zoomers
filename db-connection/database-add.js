@@ -12,7 +12,7 @@ export const addUser = (user, pass) => {
     const collection = db.collection("userdata");
 
     var myobj = { user: user, password: pass, miles: "37" };
-    collection.insertOne(myobj, function(err, r) {
+    collection.insertOne(myobj, function (err, r) {
       if (err) throw err;
       console.log('inside insertOne')
       // close connection

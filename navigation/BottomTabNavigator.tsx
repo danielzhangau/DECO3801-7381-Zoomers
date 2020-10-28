@@ -16,14 +16,14 @@ import StatisticScreen from '../screens/StatisticPageScreen';
 import StatisticTreeScreen from '../screens/StatisticTreePageScreen';
 import StatisticNewsScreen from '../screens/StatisticMapPageScreen';
 import ProfileScreen from '../screens/ProfilePageScreen';
-import { BottomTabParamList, HomeParamList, TripParamList, RewardParamList, StatisticParamList, ProfileParamList} from '../types';
+import { BottomTabParamList, HomeParamList, TripParamList, RewardParamList, StatisticParamList, ProfileParamList } from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-  
+
   return (
     <BottomTab.Navigator
       initialRouteName="Home"

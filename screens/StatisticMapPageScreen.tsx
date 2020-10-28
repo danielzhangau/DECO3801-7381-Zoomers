@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { FlatList, Image, Dimensions, ImageBackground, Text, View} from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, Image, Dimensions, ImageBackground, Text, View } from 'react-native';
 
 export default function StatisticNewsScreen() {
 
@@ -14,25 +14,25 @@ export default function StatisticNewsScreen() {
   ]);
 
   return (
-    <ImageBackground blurRadius={40} source={require('./../assets/images/tree_of_life.jpg')} style={{flex: 1}}>      
+    <ImageBackground blurRadius={40} source={require('./../assets/images/tree_of_life.jpg')} style={{ flex: 1 }}>
       <View>
-        <Text style={{fontFamily: 'Roboto-Bold', fontSize: 30, color: 'white', alignSelf: 'center', marginVertical: 10}}>News</Text>
+        <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 30, color: 'white', alignSelf: 'center', marginVertical: 10 }}>News</Text>
       </View>
-      
+
       <FlatList
-        horizontal={false} 
-        showsHorizontalScrollIndicator={false} 
+        horizontal={false}
+        showsHorizontalScrollIndicator={false}
         data={images}
-        renderItem={ ({ item, index }) => (
+        renderItem={({ item, index }) => (
           <Image source={item} // Use item to set the image source
             key={index} // Important to set a key for list items
             style={{
-              width:screenWidth - 16,
-              height:178,
-              borderWidth:2,
-              borderColor:'black',
-              resizeMode:'contain',
-              margin:8
+              width: screenWidth - 16,
+              height: 178,
+              borderWidth: 2,
+              borderColor: 'black',
+              resizeMode: 'contain',
+              margin: 8
             }}
           />
         )}

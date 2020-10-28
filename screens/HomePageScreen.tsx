@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { View, Alert, Image, Text, ImageBackground } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
 import Leaderboard from 'react-native-leaderboard';
@@ -37,7 +37,7 @@ export default class HomeScreen extends Component {
             miles: 92,
         }
     }
-    
+
     alert = (title, body) => {
         Alert.alert(
             title, body, [{ text: 'OK', onPress: () => { } },],
@@ -57,7 +57,7 @@ export default class HomeScreen extends Component {
     }
 
     renderHeader() {
-        return ( 
+        return (
             <ImageBackground blurRadius={20} source={require('./../assets/images/tree_of_life.jpg')} style={{}}>
                 <View
                     style={{ padding: 15, paddingTop: 35, alignItems: 'center' }}>

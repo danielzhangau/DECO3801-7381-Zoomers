@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 const LoginButton = ({ onPress, title }) => (
     <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-      <Text style={styles.appButtonText}>{title}</Text>
+        <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>
 );
 
