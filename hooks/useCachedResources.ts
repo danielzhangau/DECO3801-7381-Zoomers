@@ -44,11 +44,11 @@ export default function useCachedResources() {
           require('../assets/images/small_green2.jpg'),
           require('../assets/images/tree_of_life.jpg'),
           require('../assets/images/tree.png'),
-          // require('../assets/images/new1.png'),
-          // require('../assets/images/new2.png'),
-          // require('../assets/images/new3.png'),
-          // require('../assets/images/new4.png'),
-          // require('../assets/images/new5.png')
+          require('../assets/images/new1.png'),
+          require('../assets/images/new2.png'),
+          require('../assets/images/new3.png'),
+          require('../assets/images/new4.png'),
+          require('../assets/images/new5.png')
         ]);
 
         // Load fonts

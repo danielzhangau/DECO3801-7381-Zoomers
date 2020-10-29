@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground } from 'react-native';
-import { Dbconnect, test2 } from '../db-connection/mydb.js';
+// import { Dbconnect, test2 } from '../db-connection/mydb.js';
 
 class Inputs extends Component<{ value: string }, {}> {
   state = {
@@ -85,14 +85,13 @@ class Inputs extends Component<{ value: string }, {}> {
             alert('please make sure your entered your email, username and password')
           } else {
             this.signUp(this.state.email, this.state.password, this.state.checkpassword)
-            var dbconn = new Dbconnect(this.props);
-            dbconn.name = this.state.username;
-            dbconn.password = this.state.password;
-            dbconn.email = this.state.email;
-            dbconn.onPostUser();
-            dbconn.onGetUsers();
+            // var dbconn = new Dbconnect(this.props);
+            // dbconn.name = this.state.username;
+            // dbconn.password = this.state.password;
+            // dbconn.email = this.state.email;
+            // dbconn.onPostUser();
+            // dbconn.onGetUsers();
           }
-          test2(2);
         }}>
 
           <View style={{
