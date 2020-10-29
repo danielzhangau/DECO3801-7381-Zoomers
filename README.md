@@ -1,6 +1,6 @@
 # React native app -  GreenMiles
 <p align="center">
-  <img width="300" img src="img/green_miles.png" />
+  <img width="300" img src="assets/image/green_miles.png" />
 </p>
 
 We are team named 'We are AWESOME!!!'  
